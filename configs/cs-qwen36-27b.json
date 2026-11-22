@@ -1,0 +1,10 @@
+{
+  "name": "cs-qwen36-27b",
+  "annotator": "contact_sheet",
+  "model": "Qwen/Qwen3.6-27B",
+  "prompt": "gepa_duration_prior_v1",
+  "max_sheets_per_call": 0,
+  "workers": 4,
+  "gpus": 1,
+  "serve": {"model": "Qwen3.6-27B", "max_model_len": 65536, "limit_images": 64, "max_num_seqs": 8}
+}
