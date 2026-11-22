@@ -37,3 +37,22 @@ def test_parse_with_config(tmp_path):
     ap.add_argument("--max-tokens", type=int, default=1)
     args = parse_with_config(ap, ["--config", str(cfg), "--max-tokens", "5"])
     assert args.model == "m-from-config" and args.max_tokens == 5 and args.gpus == 2
+
+
+def test_parse_with_config_satisfies_required_options(tmp_path):
+    import argparse
+
+    import pytest
+
+    cfg = tmp_path / "c.json"
+    cfg.write_text('{"model": "m"}', encoding="utf-8")
+
+    def parser():
+        ap = argparse.ArgumentParser()
+        ap.add_argument("--config")
+        ap.add_argument("--model", required=True)
+        return ap
+
+    assert parse_with_config(parser(), ["--config", str(cfg)]).model == "m"
+    with pytest.raises(SystemExit):
+        parse_with_config(parser(), [])

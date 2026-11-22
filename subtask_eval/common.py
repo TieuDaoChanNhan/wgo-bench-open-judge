@@ -46,6 +46,10 @@ def parse_with_config(ap: argparse.ArgumentParser, argv: list[str] | None = None
     if known.config:
         cfg = {k.replace("-", "_"): v for k, v in json.loads(known.config.read_text(encoding="utf-8")).items()}
         ap.set_defaults(**cfg)
+        # A default does not satisfy required=True in argparse; a value from the config does.
+        for action in ap._actions:
+            if action.required and action.dest in cfg:
+                action.required = False
     args = ap.parse_args(argv)
     for k, v in cfg.items():
         if not hasattr(args, k):
