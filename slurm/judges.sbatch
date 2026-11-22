@@ -13,8 +13,11 @@
 #   JUDGES="Qwen3-32B-AWQ:Qwen/Qwen3-32B-AWQ Qwen3.8-27B:Qwen/Qwen3.8-27B" \
 #   RUNS="$RUNS_DIR/cs-qwen36-27b" EGOANT_JSON=<file in $EGOANT_DIR> sbatch slurm/judges.sbatch
 # Each JUDGES entry is <dir under $MODELS_DIR>:<served name>; the tag is the dir name.
+# RUNS may be empty (step 2 skipped). TASK_REPO and JUDGE_CACHE override the checkout and cache file.
 set -uo pipefail
 source "$W/env.sh"
+REPO="${TASK_REPO:-$REPO}"                       # a separate checkout, to run beside another job
+JUDGE_CACHE="${JUDGE_CACHE:-$RUNS_DIR/judge_cache.jsonl}"
 cd "$REPO" || exit 1
 : "${JUDGES:?}" "${EGOANT_JSON:?}"
 RUNS="${RUNS:-}"
@@ -40,7 +43,7 @@ set -e
 
 judge() {  # judge <tag> <run dir> <out file>
   "$PY" -m subtask_eval judge --run "$2" --out "$3" --base-url "http://127.0.0.1:${PORT[$1]}/v1" \
-    --model "${NAME[$1]}" --cache "$RUNS_DIR/judge_cache.jsonl"
+    --model "${NAME[$1]}" --cache "$JUDGE_CACHE"
 }
 compare_all() {  # compare_all <dir> <file prefix>; pairwise over the judges' verdict files
   local tags=("${!PORT[@]}")
