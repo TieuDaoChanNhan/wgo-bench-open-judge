@@ -1,0 +1,36 @@
+{
+  "n": 743,
+  "acc_a": {
+    "pooled": 0.3781965006729475,
+    "subset_avg": 0.36653981433431354
+  },
+  "acc_b": {
+    "pooled": 0.3822341857335128,
+    "subset_avg": 0.39677795075823097
+  },
+  "diff_pooled": -0.004037685060565288,
+  "diff_subset_avg": -0.030238136423917428,
+  "only_a_right": 81,
+  "only_b_right": 84,
+  "bootstrap": {
+    "pooled": {
+      "ci95": [
+        -0.0457,
+        0.0423
+      ],
+      "clear": false,
+      "share_a_better": 0.408
+    },
+    "subset_avg": {
+      "ci95": [
+        -0.079,
+        0.017
+      ],
+      "clear": false,
+      "share_a_better": 0.111
+    }
+  },
+  "a": "zeroshot-small/judged/zs-qwen3vl4b_judged.jsonl",
+  "b": "zeroshot-v1/zs-qwen3vl8b/judged.jsonl",
+  "subset": "all"
+}

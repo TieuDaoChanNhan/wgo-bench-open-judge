@@ -1,0 +1,36 @@
+{
+  "n": 743,
+  "acc_a": {
+    "pooled": 0.48048452220726784,
+    "subset_avg": 0.4866159257337254
+  },
+  "acc_b": {
+    "pooled": 0.4360699865410498,
+    "subset_avg": 0.45618405120221417
+  },
+  "diff_pooled": 0.04441453566621806,
+  "diff_subset_avg": 0.03043187453151125,
+  "only_a_right": 96,
+  "only_b_right": 63,
+  "bootstrap": {
+    "pooled": {
+      "ci95": [
+        0.0061,
+        0.0879
+      ],
+      "clear": true,
+      "share_a_better": 0.989
+    },
+    "subset_avg": {
+      "ci95": [
+        -0.0145,
+        0.0797
+      ],
+      "clear": false,
+      "share_a_better": 0.9195
+    }
+  },
+  "a": "zs-qwen36-27b/judged.jsonl",
+  "b": "zs-qwen38-27b/judged.jsonl",
+  "subset": "all"
+}

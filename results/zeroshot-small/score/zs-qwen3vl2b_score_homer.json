@@ -1,0 +1,28 @@
+{
+  "pooled": 0.34893617021276596,
+  "subset_avg": 0.34893617021276596,
+  "match": 164,
+  "n": 470,
+  "per_subset": {
+    "homer": {
+      "match": 164,
+      "n": 470,
+      "acc": 0.34893617021276596
+    }
+  },
+  "pooled_ci95": [
+    0.2918,
+    0.4118
+  ],
+  "subset_avg_ci95": [
+    0.2918,
+    0.4118
+  ],
+  "judge_model": "Qwen/Qwen3-32B-AWQ",
+  "unjudged": 0,
+  "preds": {
+    "n": 470,
+    "failed": 0,
+    "not_json": 0
+  }
+}

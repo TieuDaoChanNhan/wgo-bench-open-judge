@@ -1,0 +1,36 @@
+{
+  "n": 470,
+  "acc_a": {
+    "pooled": 0.39787234042553193,
+    "subset_avg": 0.39787234042553193
+  },
+  "acc_b": {
+    "pooled": 0.4765957446808511,
+    "subset_avg": 0.4765957446808511
+  },
+  "diff_pooled": -0.07872340425531915,
+  "diff_subset_avg": -0.07872340425531915,
+  "only_a_right": 55,
+  "only_b_right": 92,
+  "bootstrap": {
+    "pooled": {
+      "ci95": [
+        -0.1418,
+        -0.0023
+      ],
+      "clear": true,
+      "share_a_better": 0.017
+    },
+    "subset_avg": {
+      "ci95": [
+        -0.1418,
+        -0.0023
+      ],
+      "clear": true,
+      "share_a_better": 0.017
+    }
+  },
+  "a": "judged.jsonl",
+  "b": "../zeroshot-v1/zs-qwen36-27b/judged.jsonl",
+  "subset": "homer"
+}

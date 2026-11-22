@@ -1,0 +1,38 @@
+{
+  "pooled": 0.4360699865410498,
+  "subset_avg": 0.45618405120221417,
+  "match": 324,
+  "n": 743,
+  "per_subset": {
+    "galaxea": {
+      "match": 64,
+      "n": 123,
+      "acc": 0.5203252032520326
+    },
+    "homer": {
+      "match": 195,
+      "n": 470,
+      "acc": 0.4148936170212766
+    },
+    "robointer_droid": {
+      "match": 65,
+      "n": 150,
+      "acc": 0.43333333333333335
+    }
+  },
+  "pooled_ci95": [
+    0.3694,
+    0.4994
+  ],
+  "subset_avg_ci95": [
+    0.3902,
+    0.5268
+  ],
+  "judge_model": "Qwen/Qwen3-32B-AWQ",
+  "unjudged": 0,
+  "preds": {
+    "n": 743,
+    "failed": 0,
+    "not_json": 0
+  }
+}

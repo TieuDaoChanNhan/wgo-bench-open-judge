@@ -1,0 +1,36 @@
+{
+  "n": 470,
+  "acc_a": {
+    "pooled": 0.39787234042553193,
+    "subset_avg": 0.39787234042553193
+  },
+  "acc_b": {
+    "pooled": 0.3638297872340426,
+    "subset_avg": 0.3638297872340426
+  },
+  "diff_pooled": 0.034042553191489355,
+  "diff_subset_avg": 0.034042553191489355,
+  "only_a_right": 91,
+  "only_b_right": 75,
+  "bootstrap": {
+    "pooled": {
+      "ci95": [
+        -0.0471,
+        0.1382
+      ],
+      "clear": false,
+      "share_a_better": 0.794
+    },
+    "subset_avg": {
+      "ci95": [
+        -0.0471,
+        0.1382
+      ],
+      "clear": false,
+      "share_a_better": 0.794
+    }
+  },
+  "a": "judged.jsonl",
+  "b": "../zeroshot-v1/zs-qwen3vl8b/judged.jsonl",
+  "subset": "homer"
+}
