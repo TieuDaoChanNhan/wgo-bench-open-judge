@@ -5,6 +5,7 @@
     subtask-eval annotate  import --format egoant --src <dir> --root data/wgo --out runs/egoant-ref
     subtask-eval score     --root data/wgo --run runs/cs-qwen36-27b --write-pairs
     subtask-eval judge     --run runs/cs-qwen36-27b --model Qwen/Qwen3-32B-AWQ
+    subtask-eval agree     compare --a <verdicts> --b <verdicts>     (judge vs judge / reference / human)
     subtask-eval report    runs/* --out report.md
 """
 
@@ -17,6 +18,7 @@ COMMANDS = {
     "prepare": "subtask_eval.data.wgo",
     "score": "subtask_eval.scoring.score",
     "judge": "subtask_eval.scoring.judge",
+    "agree": "subtask_eval.scoring.agreement",
     "report": "subtask_eval.report",
 }
 ANNOTATORS = {

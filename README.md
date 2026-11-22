@@ -20,7 +20,8 @@ eval set ──► annotator ──► preds.jsonl ──► score (segments) �
 | Eval set | `subtask_eval/data/wgo.py` | `subtask-eval prepare --root data/wgo` |
 | Annotators | `subtask_eval/annotators/` | `subtask-eval annotate <name> --config configs/<run>.json --root data/wgo --out runs/<run>` |
 | Segment scoring | `subtask_eval/scoring/score.py` | `subtask-eval score --root data/wgo --run runs/<run> --write-pairs` |
-| Label judge | `subtask_eval/scoring/judge.py` | `subtask-eval judge --run runs/<run> --model Qwen/Qwen3-32B-AWQ` |
+| Label judge | `subtask_eval/scoring/judge.py` | `subtask-eval judge --run runs/<run> --model Qwen/Qwen3.8-27B` |
+| Judge agreement | `subtask_eval/scoring/agreement.py` | `subtask-eval agree compare --a <verdicts> --b <verdicts>` |
 | End-to-end scoring | same | `subtask-eval score --root data/wgo --run runs/<run> [--subset homer]` |
 | Report | `subtask_eval/report.py` | `subtask-eval report runs/* --out report.md` |
 
@@ -44,7 +45,10 @@ Scoring follows the WGO-Bench reference scorer as implemented in EgoANT (`scorin
 
 All F1 values come with 95% episode-bootstrap intervals and are reported per subset.
 
-The judge is an open-weight model, `Qwen/Qwen3-32B-AWQ`, using the Macrodata rubric, and it reads text only. It is stricter than the `gemini-3.5-flash` judge used in published numbers. Label and end-to-end scores therefore compare runs of this harness with each other, not with published tables.
+The judge is an open-weight model, `Qwen/Qwen3.8-27B` (earlier runs used `Qwen/Qwen3-32B-AWQ`), with the Macrodata rubric. It reads text only.
+- **Comparability:** published numbers use `gemini-3.5-flash`, so label and end-to-end scores here compare runs of this harness with each other, not with published tables.
+- **Checking a judge:** `slurm/judges.sbatch` compares judges with the 79 Gemini verdicts released by EgoANT and with each other.
+- **Manual review:** a reviewer writes `{"id", "human_match"}` rows, which `agree compare` reads like any other verdict file.
 
 ## Install and test
 
@@ -54,8 +58,12 @@ pytest                     # no GPU, network or video needed
 ```
 
 Models are served separately with vLLM (OpenAI-compatible API). On JUPITER, `slurm/` has the
-jobs: `check.sbatch` (tests and scorer check against EgoANT) and `run.sbatch` (one config end to
-end). Copy `slurm/env.example.sh` to `$W/env.sh` first.
+jobs:
+- `check.sbatch`: tests and the scorer check against EgoANT;
+- `run.sbatch`: one config end to end;
+- `judges.sbatch`: judge comparison.
+
+Copy `slurm/env.example.sh` to `$W/env.sh` first.
 
 ## Adding a run
 

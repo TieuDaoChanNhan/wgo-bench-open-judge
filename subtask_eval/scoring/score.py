@@ -124,6 +124,8 @@ def main() -> int:
     ap.add_argument("--root", type=Path, required=True)
     ap.add_argument("--run", type=Path, required=True, help="run directory with preds.jsonl")
     ap.add_argument("--subset", default=None)
+    ap.add_argument("--judged", type=Path, default=None, help="verdicts to use; default <run>/judged.jsonl")
+    ap.add_argument("--tag", default="", help="suffix for the score file, e.g. the judge: score_all_<tag>.json")
     ap.add_argument("--write-pairs", action="store_true", help="write <run>/pairs.jsonl for the judge (all subsets)")
     ap.add_argument("--iou", type=float, default=IOU_THRESHOLD)
     ap.add_argument("--no-outer-snap", action="store_true")
@@ -138,7 +140,7 @@ def main() -> int:
         print(f"SCORE|wrote {len(pairs)} matched pairs to {args.run / 'pairs.jsonl'}")
 
     episodes = load_episodes(args.root, args.subset)
-    judged_path = args.run / "judged.jsonl"
+    judged_path = args.judged or args.run / "judged.jsonl"
     judged = read_jsonl(judged_path)
     verdicts = {r["id"]: bool(r["match"]) for r in judged} if judged else None
     rows = score_rows(episodes, preds, snap=snap, threshold=args.iou, verdicts=verdicts)
@@ -180,7 +182,7 @@ def main() -> int:
     elif result["unjudged_pairs"]:
         print(f"WARNING: {result['unjudged_pairs']} matched pairs have no verdict and count as no match")
 
-    out = args.run / f"score_{args.subset or 'all'}.json"
+    out = args.run / f"score_{args.subset or 'all'}{'_' + args.tag if args.tag else ''}.json"
     out.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return 0
 

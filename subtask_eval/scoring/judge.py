@@ -115,6 +115,7 @@ def judge_pair(pair: dict[str, Any], cache: dict[str, Any], args: argparse.Names
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--run", type=Path, required=True, help="run directory holding pairs.jsonl")
+    ap.add_argument("--out", type=Path, default=None, help="default <run>/judged.jsonl")
     ap.add_argument("--cache", type=Path, default=Path("runs/judge_cache.jsonl"))
     ap.add_argument("--base-url", default="http://127.0.0.1:8001/v1")
     ap.add_argument("--model", required=True)
@@ -130,7 +131,7 @@ def main() -> int:
 
     pairs = read_jsonl(args.run / "pairs.jsonl")
     cache = {r["key"]: r for r in read_jsonl(args.cache)}
-    out = args.run / "judged.jsonl"
+    out = args.out or args.run / "judged.jsonl"
     if out.exists():
         out.unlink()
     matches = 0
