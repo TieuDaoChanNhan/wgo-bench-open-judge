@@ -55,7 +55,7 @@ pytest                     # no GPU, network or video needed
 
 Models are served separately with vLLM (OpenAI-compatible API). On JUPITER, `slurm/` has the
 jobs: `check.sbatch` (tests and scorer check against EgoANT) and `run.sbatch` (one config end to
-end). Copy `slurm/env.example.sh` to `$W/env.sh` first. See `JUPITER_HANDOFF.md`.
+end). Copy `slurm/env.example.sh` to `$W/env.sh` first.
 
 ## Adding a run
 
