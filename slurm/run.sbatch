@@ -8,8 +8,11 @@
 # One candidate end to end: serve it, annotate, match, judge, score.
 #   CONFIG=configs/cs-qwen36-27b.json [LIMIT=2] sbatch slurm/run.sbatch
 # The annotator's server uses GPUs 0..gpus-1 (tensor parallel), the judge the next GPU.
+# JUDGE_DIR / JUDGE_NAME given on the command line override env.sh.
 set -uo pipefail
+_JD="${JUDGE_DIR:-}"; _JN="${JUDGE_NAME:-}"
 source "$W/env.sh"
+JUDGE_DIR="${_JD:-$JUDGE_DIR}"; JUDGE_NAME="${_JN:-$JUDGE_NAME}"; export JUDGE_DIR JUDGE_NAME
 cd "$REPO" || exit 1
 : "${CONFIG:?set CONFIG to a file in configs/}"
 LIMIT="${LIMIT:-0}"
@@ -20,9 +23,9 @@ cfg() {  # cfg <dotted key>: one value from the config file
 NAME="$(cfg name)"; ANNOTATOR="$(cfg annotator)"; SERVED="$(cfg model)"; GPUS="$(cfg gpus)"
 [ "$LIMIT" != "0" ] && NAME="$NAME-smoke$LIMIT"
 OUT="$RUNS_DIR/$NAME"; mkdir -p "$OUT"
-echo "RUN|$NAME annotator=$ANNOTATOR model=$SERVED gpus=$GPUS limit=$LIMIT"
-nvidia-smi -L
-cat "$MODELS_DIR/$(cfg serve.model)/HF_REVISION.txt" 2>/dev/null || true
+echo "RUN|$NAME annotator=$ANNOTATOR model=$SERVED gpus=$GPUS limit=$LIMIT judge=$JUDGE_NAME"
+"$PY" -m subtask_eval provenance record --out "$OUT" --repo "$REPO" --note "run.sbatch $CONFIG" \
+  --models "$MODELS_DIR/$(cfg serve.model)" "$JUDGE_DIR"
 
 PIDS=()
 trap 'kill "${PIDS[@]}" 2>/dev/null || true' EXIT

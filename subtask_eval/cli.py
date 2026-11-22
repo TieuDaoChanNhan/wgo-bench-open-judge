@@ -7,6 +7,7 @@
     subtask-eval judge     --run runs/cs-qwen36-27b --model Qwen/Qwen3-32B-AWQ
     subtask-eval agree     compare --a <verdicts> --b <verdicts>     (judge vs judge / reference / human)
     subtask-eval report    runs/* --out report.md
+    subtask-eval provenance record|archive ...                       (how a job ran; files for review)
 """
 
 from __future__ import annotations
@@ -19,6 +20,7 @@ COMMANDS = {
     "score": "subtask_eval.scoring.score",
     "judge": "subtask_eval.scoring.judge",
     "agree": "subtask_eval.scoring.agreement",
+    "provenance": "subtask_eval.provenance",
     "report": "subtask_eval.report",
 }
 ANNOTATORS = {

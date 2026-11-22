@@ -82,3 +82,13 @@ new config, reported as its own run. Nothing is tuned on WGO-Bench.
 - The protocol and judge rubric come from Macrodata, [*Segmenting Robot Video into Actionable Subtasks*](https://macrodata.co/blog/annotating-robot-video-subtasks).
 - Data preparation, metrics and the contact-sheet annotator are adapted from [EgoANT](https://github.com/ShuaiZhou302/EgoANT) (MIT); see [`THIRD_PARTY.md`](THIRD_PARTY.md).
 - This repository is MIT ([`LICENSE`](LICENSE)).
+
+## Reproducibility
+
+- **Provenance:** every Slurm job starts with `subtask-eval provenance record`, which appends one entry to `<run>/provenance.json`. The entry holds:
+  - the git commit, plus any uncommitted diff;
+  - `pip freeze` and the vLLM version;
+  - the GPUs and the Slurm job id;
+  - the model revisions;
+  - the dataset manifest and the config file.
+- **Results branch:** results are reviewed from the orphan branch `results`. `subtask-eval provenance archive` copies a run's predictions, verdicts, scores, provenance and log tails there; videos are never copied. Run outputs never go to `main`. They contain WGO-Bench labels and are under CC BY-NC-SA 4.0.

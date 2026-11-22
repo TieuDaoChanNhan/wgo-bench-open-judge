@@ -22,6 +22,11 @@ cd "$REPO" || exit 1
 : "${JUDGES:?}" "${EGOANT_JSON:?}"
 RUNS="${RUNS:-}"
 AG="$RUNS_DIR/judge-agree"; mkdir -p "$AG"
+JUDGE_MODEL_DIRS=(); for j in $JUDGES; do JUDGE_MODEL_DIRS+=("$MODELS_DIR/${j%%:*}"); done
+"$PY" -m subtask_eval provenance record --out "$AG" --repo "$REPO" --note "judges.sbatch" --models "${JUDGE_MODEL_DIRS[@]}"
+for run in $RUNS; do
+  "$PY" -m subtask_eval provenance record --out "$run" --repo "$REPO" --note "judges.sbatch" --models "${JUDGE_MODEL_DIRS[@]}"
+done
 
 PIDS=(); trap 'kill "${PIDS[@]}" 2>/dev/null || true' EXIT
 declare -A PORT NAME

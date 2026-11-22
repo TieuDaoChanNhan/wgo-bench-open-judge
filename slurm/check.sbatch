@@ -17,6 +17,7 @@ echo "##### unit tests"
 echo "##### scorer check (expect micro: pred=308 gold=470 match=79, F1 0.203)"
 : "${EGOANT_PRED:?set EGOANT_PRED to the EgoANT prediction directory}"
 OUT="$RUNS_DIR/egoant-ref"
+"$PY" -m subtask_eval provenance record --out "$OUT" --repo "$REPO" --note "check.sbatch"
 "$PY" -m subtask_eval annotate import --format egoant --src "$EGOANT_DIR/$EGOANT_PRED" \
   --root "$WGO_ROOT" --subset homer --out "$OUT" --name egoant-ref
 "$PY" -m subtask_eval score --root "$WGO_ROOT" --run "$OUT" --subset homer | tee "$OUT/check.txt"
