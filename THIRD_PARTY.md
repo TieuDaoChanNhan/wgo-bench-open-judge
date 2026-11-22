@@ -6,6 +6,14 @@ are adapted from EgoANT, https://github.com/ShuaiZhou302/EgoANT, commit `b27ea59
 `scripts/wgo_gemini_rescore.py`. The judge rubric itself comes from the Macrodata write-up
 https://macrodata.co/blog/annotating-robot-video-subtasks.
 
+`seg_metrics.py` and `score_seg.py` (outer snap, greedy one-to-one IoU >= 0.75 matching,
+micro/macro segment F1, end-to-end F1 over matched pairs) follow EgoANT
+`scripts/wgo_bench/wgo_metrics.py`, `scripts/wgo_bench/score_segmentation.py` and
+`scripts/wgo_gemini_rescore.py` (`recompute_e2e`). `segment.py` (contact-sheet rendering,
+the `gepa_duration_prior_v1` and `legacy` prompts, reply parsing and post-processing) is
+adapted from `scripts/wgo_bench/contact_sheet_segment.py`; `egoant_import.py` reads the
+prediction layout of `score_segmentation.py`. Same commit and license as above.
+
 EgoANT license:
 
 ```

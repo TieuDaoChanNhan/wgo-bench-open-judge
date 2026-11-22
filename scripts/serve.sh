@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Start an OpenAI-compatible vLLM server on 127.0.0.1 and wait until it answers.
-#   bash scripts/serve.sh <model id or dir> <port> <vl|text> [served name]
+#   bash scripts/serve.sh <model id or dir> <port> <vl|vlseg|text> [served name]
+# vl: labeling (5 frames per request); vlseg: segmentation (all contact sheets of an episode in one request)
 #   bash scripts/serve.sh stop
 # One GPU holds one server at a time here, so callers stop the labeler before starting the judge.
 set -euo pipefail
@@ -17,6 +18,8 @@ MODEL="$1"; PORT="$2"; KIND="$3"; NAME="${4:-$1}"
 LOG="$W/runs/vllm-$PORT.log"
 if [ "$KIND" = "vl" ]; then
   EXTRA=(--max-model-len 16384 --limit-mm-per-prompt '{"image": 8}' --max-num-seqs 16)
+elif [ "$KIND" = "vlseg" ]; then
+  EXTRA=(--max-model-len 65536 --limit-mm-per-prompt '{"image": 64}' --max-num-seqs 8)
 else
   EXTRA=(--max-model-len 4096 --max-num-seqs 64)
 fi
