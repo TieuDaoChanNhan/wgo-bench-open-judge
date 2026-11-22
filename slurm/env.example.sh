@@ -1,4 +1,7 @@
 # Copy to $W/env.sh and adjust. Sourced by every job in slurm/.
+# JUPITER: git is not on compute nodes by default. Load it with the rest of the stack, e.g.
+#   module load Stages/2026 GCC/14.3.0 Python/3.13.5 CUDA/13 git/2.50.1
+# otherwise `provenance record` cannot read the commit and reports an error.
 export REPO="$W/repo"                       # this repository
 export WGO_ROOT="$W/data/wgo"               # output of `subtask-eval prepare`
 export MODELS_DIR="$W/models"               # one directory per model, each with a .done marker

@@ -43,6 +43,9 @@ def _cmd(args: list[str], cwd: Path | None = None) -> str | None:
 
 
 def code_state(repo: Path) -> dict[str, Any]:
+    if shutil.which("git") is None:
+        # Seen on JUPITER compute nodes: git is only on the login nodes unless a module is loaded.
+        print("PROVENANCE|WARNING git not found on PATH: commit and diff cannot be recorded", file=sys.stderr)
     return {
         "repo": str(repo),
         "commit": _cmd(["git", "rev-parse", "HEAD"], repo),
@@ -124,6 +127,9 @@ def main(argv: list[str] | None = None) -> int:
         e = record(args.out, args.repo, args.models, args.note)
         dirty = "DIRTY" if e["code"]["status"] else "clean"
         print(f"PROVENANCE|commit={e['code']['commit']} {dirty} job={e['env'].get('SLURM_JOB_ID')} -> {args.out}")
+        if not e["code"]["commit"]:
+            print("PROVENANCE|ERROR no git commit recorded (is git on PATH? is --repo a checkout?)", file=sys.stderr)
+            return 1
         return 0
     files = archive(args.run, args.dest, args.logs)
     print(f"ARCHIVE|{len(files)} files -> {args.dest}")
