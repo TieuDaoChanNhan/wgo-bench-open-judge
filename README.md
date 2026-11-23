@@ -3,7 +3,7 @@
 An open evaluation harness for **robot-video subtask annotation**: splitting a manipulation video
 into its steps and naming each step.
 
-```
+```text
 episode video + task ("put the dishes away")
         │  annotation pipeline under test
         ▼
@@ -14,7 +14,9 @@ segment F1 · label accuracy · end-to-end F1 · granularity · cost
 ```
 
 The benchmark is [WGO-Bench](https://huggingface.co/datasets/macrodata/WGO-Bench) by Macrodata:
-100 episodes with 743 human-annotated segments, from three sources:
+100 episodes with 743 human-annotated segments. An **episode** is one recorded demonstration of one
+task: a single video from a single camera, with its task instruction. The episodes come from three
+sources:
 
 - HomER: egocentric human video, 25 episodes;
 - DROID: robot arm, 50 episodes;
@@ -24,9 +26,11 @@ Everything runs on open-weight models served locally, **including the judge** th
 
 ## Results
 
-The baseline is `Qwen/Qwen3.6-27B` reading each episode as timestamped contact sheets, following
-the method of the WGO-Bench write-up. The judge is `Qwen/Qwen3-32B-AWQ`. 95% confidence intervals
-are in brackets.
+The baseline reads each episode as timestamped contact sheets (grids of frames) and asks a
+vision-language model for the segments in one call. The method and prompt come from
+[EgoANT](https://github.com/ShuaiZhou302/EgoANT). The model, `Qwen/Qwen3.6-27B`, is our choice: it
+is the default model of LeRobot's `lerobot-annotate`. The judge is `Qwen/Qwen3-32B-AWQ`
+(see [Label judge](#label-judge)). 95% confidence intervals are in brackets.
 
 | Subset | Segment F1 | Label accuracy on matched segments | End-to-end F1 |
 |---|---|---|---|
@@ -35,8 +39,22 @@ are in brackets.
 | HomER | 0.119 | 0.56 | 0.067 |
 | **All 100 episodes** | **0.193** [0.153, 0.240] | **0.50** | **0.096** [0.069, 0.130] |
 
-- **The baseline segments too coarsely:** 4.0 segments per episode at 10.4 s each, against
-  7.4 human segments at 5.8 s. On HomER it predicts 187 segments for 470 gold ones.
+**Granularity**, predicted vs human:
+
+| Subset | Segments per episode | Mean segment length |
+|---|---|---|
+| DROID | 2.6 vs 3.0 | 10.8 s vs 10.0 s |
+| Galaxea | 3.1 vs 4.9 | 5.0 s vs 3.6 s |
+| HomER | 7.5 vs 18.8 | 12.4 s vs 5.0 s |
+| **All** | **4.0 vs 7.4** | **10.4 s vs 5.8 s** |
+
+**Cost:** 0.042 GPU-hours per hour of video on one NVIDIA GH200 (1.24 hours of video in 187 s),
+with 405k input tokens, 15k output tokens and 86 model calls per hour of video.
+
+Reading the numbers:
+
+- **The baseline segments too coarsely.** The gap is largest on HomER, where humans mark 19 steps
+  per episode and the model finds 7.5. This is the main reason HomER scores lowest.
 - **For reference:** the WGO-Bench write-up reports a best segment F1 of 0.306 with Gemini 3.5 Flash.
 - Full predictions, verdicts, scores and provenance are in [`results/`](results/README.md).
 
@@ -63,11 +81,14 @@ synonyms are fine.
 **End-to-end F1** is segment F1 where a match must also pass the judge. It is the single number for
 "right boundaries *and* right names".
 
-**Granularity** is the mean segment length and the number of segments per episode, predicted vs
-human. A pipeline that splits much coarser or finer than the annotators loses F1 even when its
-segments are sensible, so read F1 together with this.
+**Granularity** is the number of segments per episode and their mean length, predicted vs human. A
+pipeline that splits much coarser or finer than the annotators loses F1 even when its segments are
+sensible, so read F1 together with granularity.
 
 **Cost** is GPU-hours, tokens and model calls per hour of video.
+- GPU-hours depend on the hardware: the same run takes fewer GPU-hours on a faster GPU. Compare
+  GPU-hours only between runs on the same GPU type; every run records its GPUs in its provenance.
+- Tokens and calls do not depend on the hardware, so they compare across machines.
 
 All F1 values come with 95% intervals from an **episode bootstrap**: the episodes are resampled
 2,000 times and the score recomputed each time. Episodes, not segments, are resampled, because
@@ -75,63 +96,98 @@ segments of one episode are not independent.
 
 ## Label judge
 
-Published WGO-Bench numbers use `gemini-3.5-flash` as judge. To stay fully open we use a local
-model, chosen by how closely it reproduces Gemini's verdicts. EgoANT released 79 label pairs judged
-by Gemini; we judged the same 79 pairs with two candidates.
+Published WGO-Bench numbers use `gemini-3.5-flash` as judge. To stay open, we replace it with a
+local model and pick the one that best reproduces Gemini's verdicts. EgoANT released 79 label pairs
+with Gemini's verdicts; we judged the same 79 pairs with two candidates.
 
 | | `Qwen/Qwen3-32B-AWQ` (used) | `Qwen/Qwen3.8-27B` |
 |---|---|---|
 | Agreement with Gemini | **0.90** (71/79) | 0.70 (55/79) |
 | Cohen's kappa | **0.76** | 0.42 |
-| Accept rate (Gemini: 0.76) | 0.66 | 0.46 |
 | Gemini accepts, judge rejects | 8 | 24 |
 | Gemini rejects, judge accepts | 0 | 0 |
 
-How to read the table:
+`Qwen3-32B-AWQ` agrees with Gemini more often, so we use it. Neither judge accepts a label that
+Gemini rejects; both are stricter than Gemini, `Qwen3.8-27B` much more so.
 
-- **Agreement** is the share of the 79 pairs on which the judge gives Gemini's verdict.
-- **Cohen's kappa** is agreement corrected for chance. Two judges that both say "match" most of the
-  time agree often by luck alone; kappa removes that part.
-  - 1 means perfect agreement, and 0 means no better than chance.
-  - As a rule of thumb, 0.4–0.6 is moderate and above 0.6 is substantial.
-- **Accept rate** is the share of pairs the judge calls a match. It is lower than Gemini's for both
-  judges, so both are stricter.
-- **The last two rows** are the two ways to disagree. Neither judge ever accepts a label Gemini
-  rejects. The newer `Qwen3.8-27B` also rejects many that Gemini accepts, for example "open green
-  bottle" against "unscrew green cap".
+**Agreement** is the share of pairs on which the judge gives Gemini's verdict.
 
-We therefore use `Qwen3-32B-AWQ`.
+**Cohen's kappa** is agreement corrected for the agreement two judges would reach by chance:
 
-- **Effect on scores:** on the baseline, switching the judge to `Qwen3.8-27B` lowers label accuracy
-  from 0.50 to 0.42 and end-to-end F1 from 0.096 to 0.081. The two judges agree on 83% of the
-  baseline's 110 matched pairs (kappa 0.65). Segment F1 does not depend on the judge.
-- **Comparability:** because both open judges are stricter than Gemini, label and end-to-end
-  scores here compare runs of this harness with each other, not with published tables.
+```text
+kappa = (p_o - p_e) / (1 - p_e)
+
+p_o = observed agreement
+p_e = P(A says match) · P(B says match) + P(A says no match) · P(B says no match)
+```
+
+Worked example for `Qwen3-32B-AWQ`, from its 2×2 table:
+
+| | Judge: match | Judge: no match | Total |
+|---|---|---|---|
+| **Gemini: match** | 52 | 8 | 60 |
+| **Gemini: no match** | 0 | 19 | 19 |
+| **Total** | 52 | 27 | 79 |
+
+```text
+p_o   = (52 + 19) / 79                          = 0.899
+p_e   = (60/79)(52/79) + (19/79)(27/79)         = 0.582
+kappa = (0.899 - 0.582) / (1 - 0.582)           = 0.76
+```
+
+Kappa is 1 for perfect agreement and 0 for chance level. As a rule of thumb, 0.4–0.6 is moderate
+and above 0.6 is substantial.
+
+**What the choice changes:** segment F1 does not use the judge. With `Qwen3.8-27B` instead, the
+baseline's label accuracy would drop from 0.50 to 0.42 and its end-to-end F1 from 0.096 to 0.081.
+Because both open judges are stricter than Gemini, label and end-to-end scores here should be
+compared with other runs of this harness, not with published tables.
 
 ## Reproducibility
 
-- **Scorer.** It reproduces the reference scorer exactly. On EgoANT's released HomER predictions it
-  gives the published counts: 308 predicted, 470 gold, 79 matched, F1 0.203.
-- **Judges.** They are deterministic. Judging the same pairs twice gave identical verdicts (79/79
-  for both judges).
-- **Annotator.** The baseline was run twice from scratch with the same code and models.
-  - 83 of 100 episodes came out identical.
-  - Segment F1 was 0.191 and 0.193; label accuracy 0.50 both times; end-to-end F1 0.096 both times.
-  - Decoding is greedy, so the remaining differences come from batching inside vLLM.
-- **Provenance.** Every job writes `provenance.json`: the git commit and any local diff, installed
-  packages, vLLM version, GPUs, model revisions, dataset manifest and config. The committed results
-  were produced from a clean checkout.
-- **Re-scoring.** Scoring the committed predictions and verdicts needs no GPU and gives the
-  committed scores. `--out` writes into another directory, so the committed files stay untouched:
-  ```bash
-  subtask-eval score --root data/wgo --run results/wgo-bench/baseline-qwen3.6-27b --out runs/rescore
-  ```
+Reproducible means that someone else can rerun the evaluation and get the same numbers, and can
+see exactly what produced each committed result. Three checks cover this.
+
+| What | How it was checked | Result |
+|---|---|---|
+| **Scorer** | Scored the HomER predictions EgoANT released, and compared with EgoANT's published counts | Identical: 308 predicted, 470 human, 79 matched, F1 0.203 |
+| **Judges** | Judged the same 79 pairs twice | Identical verdicts, 79/79, for both judges |
+| **Annotator** | Ran the whole baseline twice from scratch with the same code and models | 83 of 100 episodes identical; segment F1 0.191 vs 0.193; label accuracy and end-to-end F1 unchanged |
+
+The annotator decodes greedily, so it is nearly but not exactly deterministic: vLLM batches
+requests differently from run to run, which changes the rounding inside the model slightly.
+
+### Provenance
+
+**Provenance** is a record of where a result came from. Every job writes a `provenance.json` next
+to its outputs, with:
+
+- **code:** the git commit, and any uncommitted changes;
+- **environment:** installed Python packages, vLLM version and the GPUs used;
+- **models:** the exact model revisions served;
+- **data:** the dataset revision and a list of the files used;
+- **config:** the settings of the run.
+
+With this file, a result can be traced back to the exact code, models and data, and rerun. The
+committed results were produced from a clean checkout, with no uncommitted changes.
+
+### Re-scoring the committed results
+
+Scoring needs no GPU. `--out` writes into a new directory, so the committed files stay untouched:
+
+```bash
+subtask-eval prepare --root data/wgo
+subtask-eval score --root data/wgo --run results/wgo-bench/baseline-qwen3.6-27b --out runs/rescore
+```
 
 ## Install
 
+Python 3.10 or newer:
+
 ```bash
-git clone https://github.com/TieuDaoChanNhan/wgo-bench-open-judge.git && cd wgo-bench-open-judge
-pip install -e ".[test]"                 # Python >= 3.10
+git clone https://github.com/TieuDaoChanNhan/wgo-bench-open-judge.git
+cd wgo-bench-open-judge
+pip install -e ".[test]"
 pytest                                   # no GPU, network or video needed
 subtask-eval prepare --root data/wgo     # downloads WGO-Bench at a pinned revision
 ```
@@ -140,16 +196,25 @@ Models are served separately with [vLLM](https://docs.vllm.ai), through an OpenA
 
 ## Running an evaluation
 
-Each stage is a subcommand and reads and writes files in a run directory:
+Each stage is a subcommand that reads and writes files in a run directory:
 
 ```bash
+# 1. annotate
 subtask-eval annotate contact_sheet --config configs/cs-qwen36-27b.json \
-    --root data/wgo --out runs/my-run --base-url http://127.0.0.1:8000/v1   # 1. annotate
-subtask-eval score --root data/wgo --run runs/my-run --write-pairs          # 2. segment F1, matched pairs
+    --root data/wgo --out runs/my-run --base-url http://127.0.0.1:8000/v1
+
+# 2. segment F1, and the matched pairs to judge
+subtask-eval score --root data/wgo --run runs/my-run --write-pairs
+
+# 3. judge the labels of the matched pairs
 subtask-eval judge --run runs/my-run --model Qwen/Qwen3-32B-AWQ \
-    --base-url http://127.0.0.1:8001/v1                                     # 3. judge the labels
-subtask-eval score --root data/wgo --run runs/my-run [--subset homer]       # 4. all metrics
-subtask-eval report runs/*                                                  # 5. comparison table
+    --base-url http://127.0.0.1:8001/v1
+
+# 4. all metrics (add --subset homer for one subset)
+subtask-eval score --root data/wgo --run runs/my-run
+
+# 5. comparison table over runs
+subtask-eval report runs/*
 ```
 
 | Stage | What it does |
@@ -169,23 +234,26 @@ subtask-eval report runs/*                                                  # 5.
 
 ### On a Slurm cluster
 
-`slurm/` has three example jobs. Each one serves the models it needs with vLLM, runs the stages
-above, and records provenance:
+[Slurm](https://slurm.schedmd.com) is the job scheduler used on most GPU clusters. `slurm/` has
+three example jobs. Each one serves the models it needs with vLLM, runs the stages above and records
+provenance.
 
 | Job | GPUs | What it runs |
 |---|---|---|
-| `check.sbatch` | none | Unit tests and the scorer check |
-| `run.sbatch` | annotator + 1 | One config end to end |
-| `judges.sbatch` | one per judge | Judge comparison |
+| `check.sbatch` | none | **Unit tests**, the small automated tests in `tests/` that check each function on toy inputs. Then the **scorer check**: scoring EgoANT's released predictions and comparing with its published counts (see [Reproducibility](#reproducibility)) |
+| `run.sbatch` | annotator + 1 | One config end to end: annotate, score, judge, score again |
+| `judges.sbatch` | one per judge | Judge comparison against Gemini and against each other |
 
 ```bash
-export W=/path/to/workdir && cp slurm/env.example.sh $W/env.sh   # then edit the paths
-CONFIG=configs/cs-qwen36-27b.json sbatch -p <partition> -A <account> -o $W/logs/%x-%j.log slurm/run.sbatch
+export W=/path/to/workdir
+cp slurm/env.example.sh $W/env.sh        # then edit the paths
+CONFIG=configs/cs-qwen36-27b.json sbatch -p <partition> -A <account> \
+    -o $W/logs/%x-%j.log slurm/run.sbatch
 ```
 
 ## Layout
 
-```
+```text
 subtask_eval/
   data/wgo.py               WGO-Bench download and loading
   annotators/               pipelines under test, common output format and run loop
