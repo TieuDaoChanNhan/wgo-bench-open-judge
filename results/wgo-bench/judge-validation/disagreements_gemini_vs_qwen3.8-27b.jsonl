@@ -1,0 +1,24 @@
+{"id": "homer_11|p015|g018", "a": true, "b": false, "gold_label": "scoop white powder from the clear container using an orange measuring spoon", "pred_label": "scoop contents from large jar"}
+{"id": "homer_12|p012|g019", "a": true, "b": false, "gold_label": "remove the blue lid from the rectangular food storage container", "pred_label": "Open the container"}
+{"id": "homer_2|p012|g016", "a": true, "b": false, "gold_label": "scrub and rinse a clear glass under running water in the sink", "pred_label": "Rinse the glass under running water"}
+{"id": "homer_2|p015|g020", "a": true, "b": false, "gold_label": "scrub the white saucer with a sponge under running water in the sink", "pred_label": "wash the plate"}
+{"id": "homer_38|p003|g002", "a": true, "b": false, "gold_label": "place the bottom white plate on the table in front of the nearest chair to the right", "pred_label": "Place the plate on the table"}
+{"id": "homer_38|p004|g003", "a": true, "b": false, "gold_label": "place the bottom white plate on the table in front of the nearest chair to the right", "pred_label": "Place the plate on the table"}
+{"id": "homer_38|p005|g004", "a": true, "b": false, "gold_label": "place the bottom white plate to the head of table closer to you", "pred_label": "place plate on table"}
+{"id": "homer_39|p003|g006", "a": true, "b": false, "gold_label": "wipe the granite countertop with a blue grey sponge next to the fruit bowl", "pred_label": "Wipe countertop with cloth"}
+{"id": "homer_39|p004|g008", "a": true, "b": false, "gold_label": "pick up the beige container from the countertop", "pred_label": "Pick up the jar"}
+{"id": "homer_4|p005|g005", "a": true, "b": false, "gold_label": "wipe the top surface of the wooden nightstand with a white cloth", "pred_label": "Wipe the table with a cloth"}
+{"id": "homer_50|p001|g005", "a": true, "b": false, "gold_label": "use a green screwdriver to tighten the screw on the toy excavator's wheel", "pred_label": "Screw the wheel onto the toy truck"}
+{"id": "homer_50|p004|g012", "a": true, "b": false, "gold_label": "use a green screwdriver to tighten the screw on the toy excavator's wheel", "pred_label": "Screw the wheel onto the toy truck"}
+{"id": "homer_50|p006|g019", "a": true, "b": false, "gold_label": "use a green screwdriver to tighten the screw on the toy excavator's wheel", "pred_label": "Tighten screw on toy truck wheel"}
+{"id": "homer_50|p008|g022", "a": true, "b": false, "gold_label": "push a black tire onto the left-front wheel hub of the yellow toy excavator", "pred_label": "Attach wheel to toy truck"}
+{"id": "homer_50|p010|g026", "a": true, "b": false, "gold_label": "tighten the screw on the wheel of the yellow toy excavator using a green screwdriver", "pred_label": "Tighten screw on toy truck wheel"}
+{"id": "homer_59|p001|g001", "a": true, "b": false, "gold_label": "place them three books on to the empty shelf", "pred_label": "Place books on shelf"}
+{"id": "homer_59|p003|g003", "a": true, "b": false, "gold_label": "place the three books onto the shelf right next to existing books", "pred_label": "Place books on shelf"}
+{"id": "homer_59|p014|g013", "a": true, "b": false, "gold_label": "place the three books onto the shelf right next to existing books", "pred_label": "Place books on shelf"}
+{"id": "homer_60|p004|g005", "a": true, "b": false, "gold_label": "place three books onto the middle shelf of the white cabinet", "pred_label": "Place books on shelf"}
+{"id": "homer_60|p007|g009", "a": true, "b": false, "gold_label": "place five books onto the middle shelf of the white cabinet", "pred_label": "Place books on shelf"}
+{"id": "homer_60|p016|g017", "a": true, "b": false, "gold_label": "place the four books onto the middle shelf of the white cabinet", "pred_label": "Place books on shelf"}
+{"id": "homer_7|p000|g001", "a": true, "b": false, "gold_label": "draw a sun on the white paper with a pen in the center of the paper", "pred_label": "Draw a sun on the paper"}
+{"id": "homer_7|p005|g005", "a": true, "b": false, "gold_label": "draw a palm tree in the middle of hills with a pen", "pred_label": "Draw palm tree on paper"}
+{"id": "homer_9|p001|g004", "a": true, "b": false, "gold_label": "wash the inside of clear glass using a green dishcloth under", "pred_label": "wash the glass with the sponge"}

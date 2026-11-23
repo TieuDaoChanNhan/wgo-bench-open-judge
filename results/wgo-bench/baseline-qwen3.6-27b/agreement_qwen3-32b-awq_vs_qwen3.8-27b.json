@@ -1,0 +1,17 @@
+{
+  "a": "<workdir>/wgo_bench_open_judge/runs/cs-qwen36-27b/judged_Qwen3-32B-AWQ.jsonl",
+  "b": "<workdir>/wgo_bench_open_judge/runs/cs-qwen36-27b/judged_Qwen3.8-27B.jsonl",
+  "n": 110,
+  "agreement": 0.8273,
+  "kappa": 0.6545,
+  "accept_rate_a": 0.5,
+  "accept_rate_b": 0.4182,
+  "table": {
+    "a_true_b_true": 41,
+    "a_true_b_false": 14,
+    "a_false_b_true": 5,
+    "a_false_b_false": 50
+  },
+  "only_in_a": 0,
+  "only_in_b": 0
+}

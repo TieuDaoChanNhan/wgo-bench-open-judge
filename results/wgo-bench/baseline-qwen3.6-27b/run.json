@@ -1,0 +1,37 @@
+{
+  "sessions": [
+    {
+      "started": 1795398581.0752883,
+      "wall_sec": 187.378,
+      "episodes": 100,
+      "workers": 4
+    }
+  ],
+  "config": {
+    "annotator": "contact_sheet",
+    "name": "cs-qwen36-27b",
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model": "Qwen/Qwen3.6-27B",
+    "prompt": "gepa_duration_prior_v1",
+    "sample_sec": 0.5,
+    "tile_px": 224,
+    "cols": 5,
+    "tiles_per_sheet": 20,
+    "quality": 80,
+    "max_sheets_per_call": 0,
+    "min_seg_sec": 0.25,
+    "max_tokens": 8192,
+    "subset": null,
+    "limit": 0,
+    "workers": 4,
+    "timeout": 600,
+    "retries": 2,
+    "gpus": 1,
+    "serve": {
+      "model": "Qwen3.6-27B",
+      "max_model_len": 65536,
+      "limit_images": 64,
+      "max_num_seqs": 8
+    }
+  }
+}

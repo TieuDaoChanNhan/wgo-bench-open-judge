@@ -1,0 +1,19 @@
+{"id": "galaxea_045|p002|g002", "a": true, "b": false, "gold_label": "place the clear cup on the table to the right of the pink bowl", "pred_label": "place the cup on the table"}
+{"id": "galaxea_049|p002|g002", "a": false, "b": true, "gold_label": "place the clear cup on the table right next to the pink bowl", "pred_label": "place the cup back on the table"}
+{"id": "homer_12|p014|g035", "a": true, "b": false, "gold_label": "unscrew and remove the green cap from the green bottle", "pred_label": "open green bottle"}
+{"id": "homer_1|p009|g019", "a": true, "b": false, "gold_label": "place the pitcher on the center part of the table between the two glasses", "pred_label": "adjust pitcher position"}
+{"id": "homer_29|p000|g000", "a": true, "b": false, "gold_label": "pick up the onion and the knife", "pred_label": "pick up the knife"}
+{"id": "homer_3|p002|g007", "a": true, "b": false, "gold_label": "stir the brown liquid in the pan using a white spatula", "pred_label": "stirring the mixture in the pan with a white spoon"}
+{"id": "homer_4|p004|g005", "a": true, "b": false, "gold_label": "wipe the top surface of the wooden nightstand with a white cloth", "pred_label": "Wipe the top surface of the cabinet again"}
+{"id": "homer_50|p005|g019", "a": true, "b": false, "gold_label": "use a green screwdriver to tighten the screw on the toy excavator's wheel", "pred_label": "tightening the second rear wheel with a screwdriver"}
+{"id": "homer_50|p007|g026", "a": true, "b": false, "gold_label": "tighten the screw on the wheel of the yellow toy excavator using a green screwdriver", "pred_label": "tightening the second front wheel with a screwdriver"}
+{"id": "homer_5|p006|g007", "a": false, "b": true, "gold_label": "wipe the white shelf surface around the decorative items with a purple cloth", "pred_label": "dust the middle shelf"}
+{"id": "robointer_droid_000005|p000|g000", "a": false, "b": true, "gold_label": "pick up the pen from the black-red cup", "pred_label": "pick the pen from the mug"}
+{"id": "robointer_droid_000007|p000|g000", "a": false, "b": true, "gold_label": "pick up the solid glue from the table", "pred_label": "pick the bottle"}
+{"id": "robointer_droid_000032|p000|g000", "a": false, "b": true, "gold_label": "pick up the red measuring spoon from the open drawer", "pred_label": "Pick up the pink and silver measuring spoon from the open drawer"}
+{"id": "robointer_droid_000042|p000|g000", "a": true, "b": false, "gold_label": "pick up the glass cup from the grey plate", "pred_label": "approach and grasp the glass cup"}
+{"id": "robointer_droid_000044|p000|g000", "a": true, "b": false, "gold_label": "grasp the handle of the glass lid on the table", "pred_label": "pick up the pot lid"}
+{"id": "robointer_droid_000050|p000|g000", "a": true, "b": false, "gold_label": "pick up the blue building block from the top of the cabinet", "pred_label": "pick up the blue block"}
+{"id": "robointer_droid_000056|p000|g000", "a": true, "b": false, "gold_label": "pick up the spoon from the blue bowl", "pred_label": "approach and grasp the spoon"}
+{"id": "robointer_droid_000058|p000|g000", "a": true, "b": false, "gold_label": "pick up the black marker from the table", "pred_label": "approach and grasp the object"}
+{"id": "robointer_droid_000060|p001|g001", "a": true, "b": false, "gold_label": "insert the black plug into the middle of the power strip on the table", "pred_label": "lift the plug and move it to the power strip"}

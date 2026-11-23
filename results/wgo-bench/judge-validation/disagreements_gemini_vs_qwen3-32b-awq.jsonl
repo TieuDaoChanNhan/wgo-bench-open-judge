@@ -1,0 +1,8 @@
+{"id": "homer_11|p015|g018", "a": true, "b": false, "gold_label": "scoop white powder from the clear container using an orange measuring spoon", "pred_label": "scoop contents from large jar"}
+{"id": "homer_2|p005|g008", "a": true, "b": false, "gold_label": "wash the glass mug with a sponge under running water", "pred_label": "wash the glass"}
+{"id": "homer_39|p004|g008", "a": true, "b": false, "gold_label": "pick up the beige container from the countertop", "pred_label": "Pick up the jar"}
+{"id": "homer_50|p001|g005", "a": true, "b": false, "gold_label": "use a green screwdriver to tighten the screw on the toy excavator's wheel", "pred_label": "Screw the wheel onto the toy truck"}
+{"id": "homer_50|p004|g012", "a": true, "b": false, "gold_label": "use a green screwdriver to tighten the screw on the toy excavator's wheel", "pred_label": "Screw the wheel onto the toy truck"}
+{"id": "homer_50|p008|g022", "a": true, "b": false, "gold_label": "push a black tire onto the left-front wheel hub of the yellow toy excavator", "pred_label": "Attach wheel to toy truck"}
+{"id": "homer_50|p010|g026", "a": true, "b": false, "gold_label": "tighten the screw on the wheel of the yellow toy excavator using a green screwdriver", "pred_label": "Tighten screw on toy truck wheel"}
+{"id": "homer_7|p005|g005", "a": true, "b": false, "gold_label": "draw a palm tree in the middle of hills with a pen", "pred_label": "Draw palm tree on paper"}

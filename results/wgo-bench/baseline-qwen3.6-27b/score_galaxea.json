@@ -1,0 +1,647 @@
+{
+  "run": "<workdir>/wgo_bench_open_judge/runs/cs-qwen36-27b",
+  "subset": "galaxea",
+  "iou_threshold": 0.75,
+  "outer_snap": true,
+  "micro": {
+    "episodes": 25,
+    "n_pred": 78,
+    "n_gold": 123,
+    "n_match": 18,
+    "precision": 0.23076923076923078,
+    "recall": 0.14634146341463414,
+    "f1": 0.17910447761194032,
+    "macro_f1": 0.1939248120300752,
+    "n_sem": 8,
+    "e2e_precision": 0.10256410256410256,
+    "e2e_recall": 0.06504065040650407,
+    "e2e_f1": 0.07960199004975126,
+    "label_acc_on_matches": 0.4444444444444444
+  },
+  "per_subset": {
+    "galaxea": {
+      "episodes": 25,
+      "n_pred": 78,
+      "n_gold": 123,
+      "n_match": 18,
+      "precision": 0.23076923076923078,
+      "recall": 0.14634146341463414,
+      "f1": 0.17910447761194032,
+      "macro_f1": 0.1939248120300752,
+      "n_sem": 8,
+      "e2e_precision": 0.10256410256410256,
+      "e2e_recall": 0.06504065040650407,
+      "e2e_f1": 0.07960199004975126,
+      "label_acc_on_matches": 0.4444444444444444
+    }
+  },
+  "subset_avg": {
+    "f1": 0.17910447761194032,
+    "e2e_f1": 0.07960199004975126
+  },
+  "f1_micro_ci95": [
+    0.08,
+    0.3125
+  ],
+  "f1_subset_avg_ci95": [
+    0.08,
+    0.3125
+  ],
+  "e2e_f1_micro_ci95": [
+    0.0214,
+    0.1633
+  ],
+  "e2e_f1_subset_avg_ci95": [
+    0.0214,
+    0.1633
+  ],
+  "granularity": {
+    "all": {
+      "pred_sec": 5.039,
+      "gold_sec": 3.601,
+      "pred_per_episode": 3.12,
+      "gold_per_episode": 4.92
+    },
+    "galaxea": {
+      "pred_sec": 5.039,
+      "gold_sec": 3.601,
+      "pred_per_episode": 3.12,
+      "gold_per_episode": 4.92
+    }
+  },
+  "gold_gaps": {
+    "all": {
+      "n_gaps": 0,
+      "gap_share": 0.0,
+      "gap_free_ceiling_f1": 1.0
+    },
+    "galaxea": {
+      "n_gaps": 0,
+      "gap_share": 0.0,
+      "gap_free_ceiling_f1": 1.0
+    }
+  },
+  "cost": {
+    "video_hours": 0.1381,
+    "wall_sec": 187.4,
+    "gpus": 1.0,
+    "gpu_hours_per_video_hour": 0.3768,
+    "tokens_in_per_video_hour": 451415,
+    "tokens_out_per_video_hour": 26569,
+    "calls_per_video_hour": 181.0
+  },
+  "missing_pred": 0,
+  "failed_pred": 0,
+  "unjudged_pairs": 0,
+  "judge_model": "Qwen/Qwen3-32B-AWQ",
+  "per_episode": [
+    {
+      "n_pred": 7,
+      "n_gold": 17,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_002",
+      "subset": "galaxea",
+      "task": "rearrange the word baai as brain.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 8,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_007",
+      "subset": "galaxea",
+      "task": "place the food in the right basket with the right gripper, and place the non food items in the left basket with the left gripper.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 5,
+      "n_gold": 14,
+      "n_match": 1,
+      "precision": 0.2,
+      "recall": 0.07142857142857142,
+      "f1": 0.10526315789473682,
+      "pairs": [
+        {
+          "pred_i": 3,
+          "gold_j": 7,
+          "iou": 0.8993,
+          "pred_label": "place the blue cloth in the left basket",
+          "gold_label": "place the wooden spoon into the left basket",
+          "id": "galaxea_009|p003|g007",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "galaxea_009",
+      "subset": "galaxea",
+      "task": "on the green table,place the food in the right basket with the right gripper, and place the non food items in the left basket with the left gripper.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 12,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_011",
+      "subset": "galaxea",
+      "task": "place the food in the right basket with the right gripper, and place the non food items in the left basket with the left gripper.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 6,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_013",
+      "subset": "galaxea",
+      "task": "place the food in the right basket with the right gripper, and place the non food items in the left basket with the left gripper.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 6,
+      "n_match": 2,
+      "precision": 0.5,
+      "recall": 0.3333333333333333,
+      "f1": 0.4,
+      "pairs": [
+        {
+          "pred_i": 1,
+          "gold_j": 2,
+          "iou": 0.8853,
+          "pred_label": "pour the yellow pigment into the container",
+          "gold_label": "place the test tube inside the red cup",
+          "id": "galaxea_028|p001|g002",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 3,
+          "gold_j": 5,
+          "iou": 0.8435,
+          "pred_label": "pour the red pigment into the container",
+          "gold_label": "place the test tube inside the red cup",
+          "id": "galaxea_028|p003|g005",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "galaxea_028",
+      "subset": "galaxea",
+      "task": "pick up the test tube with red pigment and the test tube with blue pigment by grippers and pour them into the container.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 6,
+      "n_match": 1,
+      "precision": 0.25,
+      "recall": 0.16666666666666666,
+      "f1": 0.2,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.7505,
+          "pred_label": "pick up the test tube with red pigment",
+          "gold_label": "pick up the test tube with red pigment",
+          "id": "galaxea_033|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "galaxea_033",
+      "subset": "galaxea",
+      "task": "pick up the test tube with red pigment and the test tube with blue pigment by grippers and pour them into the container.",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 7,
+      "n_gold": 6,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_037",
+      "subset": "galaxea",
+      "task": "pick up the test tube with yellow pigment and the test tube with red pigment by grippers and pour them into the beaker.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 6,
+      "n_gold": 6,
+      "n_match": 5,
+      "precision": 0.8333333333333334,
+      "recall": 0.8333333333333334,
+      "f1": 0.8333333333333334,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8806,
+          "pred_label": "pick up the test tube with yellow pigment",
+          "gold_label": "pick up the test tube with red pigment",
+          "id": "galaxea_039|p000|g000",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 1,
+          "iou": 0.7906,
+          "pred_label": "pour the yellow pigment into the beaker",
+          "gold_label": "pour the red pigment from the test tube into the clear beaker",
+          "id": "galaxea_039|p001|g001",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 3,
+          "gold_j": 3,
+          "iou": 0.794,
+          "pred_label": "pick up the test tube with red pigment",
+          "gold_label": "pick up the test tube with yellow pigment",
+          "id": "galaxea_039|p003|g003",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 4,
+          "gold_j": 4,
+          "iou": 0.9411,
+          "pred_label": "pour the red pigment into the beaker",
+          "gold_label": "pour the yellow pigment from the test tube into the clear beaker",
+          "id": "galaxea_039|p004|g004",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 5,
+          "gold_j": 5,
+          "iou": 0.9652,
+          "pred_label": "place the test tube with red pigment on the table",
+          "gold_label": "put the test tube into the pink bowl",
+          "id": "galaxea_039|p005|g005",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "galaxea_039",
+      "subset": "galaxea",
+      "task": "pick up the test tube with yellow pigment and the test tube with red pigment by grippers and pour them into the beaker.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 8,
+      "n_gold": 6,
+      "n_match": 1,
+      "precision": 0.125,
+      "recall": 0.16666666666666666,
+      "f1": 0.14285714285714288,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9171,
+          "pred_label": "pick up the test tube with blue pigment",
+          "gold_label": "pick up the test tube with red pigment",
+          "id": "galaxea_041|p000|g000",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "galaxea_041",
+      "subset": "galaxea",
+      "task": "pick up the test tube with yellow pigment and the test tube with red pigment by grippers and pour them into the beaker.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_043",
+      "subset": "galaxea",
+      "task": "use the left gripper to place the mouse on the left side of the table onto the mouse pad on the right side.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 3,
+      "n_match": 2,
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1": 0.6666666666666666,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8375,
+          "pred_label": "pick up the cup",
+          "gold_label": "pick up the glass with liquid",
+          "id": "galaxea_045|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 2,
+          "gold_j": 2,
+          "iou": 0.8124,
+          "pred_label": "place the cup on the table",
+          "gold_label": "place the clear cup on the table to the right of the pink bowl",
+          "id": "galaxea_045|p002|g002",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "galaxea_045",
+      "subset": "galaxea",
+      "task": "use a gripper to pick up the cup and pour the liquid into a bowl or tray.",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 3,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.7651,
+          "pred_label": "pick up the cup",
+          "gold_label": "pick up the glass cup containing white powder",
+          "id": "galaxea_047|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "galaxea_047",
+      "subset": "galaxea",
+      "task": "use a gripper to pick up the cup and pour the powder into a bowl or tray.",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 3,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "pairs": [
+        {
+          "pred_i": 2,
+          "gold_j": 2,
+          "iou": 0.8138,
+          "pred_label": "place the cup back on the table",
+          "gold_label": "place the clear cup on the table right next to the pink bowl",
+          "id": "galaxea_049|p002|g002",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "galaxea_049",
+      "subset": "galaxea",
+      "task": "use a gripper to pick up the cup and pour the solid into a bowl or tray.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 3,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8844,
+          "pred_label": "pick up the cup",
+          "gold_label": "pick up the glass with beans",
+          "id": "galaxea_050|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "galaxea_050",
+      "subset": "galaxea",
+      "task": "use a gripper to pick up the cup and pour the solid into a bowl or tray.",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 4,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_052",
+      "subset": "galaxea",
+      "task": "use the gripper to pour the water into the other two cups on black table.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_058",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the brown bowl.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_060",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the brown plate.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_062",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the dish.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_065",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the gray plate.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_067",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the pink bowl.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_069",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the white box.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_071",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the yellow basket.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 1,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9466,
+          "pred_label": "open the drawer",
+          "gold_label": "pull the white handle to open the red drawer",
+          "id": "galaxea_073|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "galaxea_073",
+      "subset": "galaxea",
+      "task": "use the gripper to open the drawer and close the red drawer.",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8588,
+          "pred_label": "open the drawer",
+          "gold_label": "grasp the white handle and pull open the yellow drawer",
+          "id": "galaxea_075|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 1,
+          "iou": 0.8633,
+          "pred_label": "close the drawer",
+          "gold_label": "push the yellow drawer closed",
+          "id": "galaxea_075|p001|g001",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "galaxea_075",
+      "subset": "galaxea",
+      "task": "use the gripper to open the drawer and close the yellow drawer.",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    }
+  ]
+}

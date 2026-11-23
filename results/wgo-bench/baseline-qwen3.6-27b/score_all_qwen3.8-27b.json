@@ -1,0 +1,2703 @@
+{
+  "run": "<workdir>/wgo_bench_open_judge/runs/cs-qwen36-27b",
+  "subset": "all",
+  "iou_threshold": 0.75,
+  "outer_snap": true,
+  "micro": {
+    "episodes": 100,
+    "n_pred": 397,
+    "n_gold": 743,
+    "n_match": 110,
+    "precision": 0.2770780856423174,
+    "recall": 0.1480484522207268,
+    "f1": 0.19298245614035087,
+    "macro_f1": 0.27289934496467494,
+    "n_sem": 46,
+    "e2e_precision": 0.11586901763224182,
+    "e2e_recall": 0.06191117092866756,
+    "e2e_f1": 0.08070175438596491,
+    "label_acc_on_matches": 0.41818181818181815
+  },
+  "per_subset": {
+    "galaxea": {
+      "episodes": 25,
+      "n_pred": 78,
+      "n_gold": 123,
+      "n_match": 18,
+      "precision": 0.23076923076923078,
+      "recall": 0.14634146341463414,
+      "f1": 0.17910447761194032,
+      "macro_f1": 0.1939248120300752,
+      "n_sem": 8,
+      "e2e_precision": 0.10256410256410256,
+      "e2e_recall": 0.06504065040650407,
+      "e2e_f1": 0.07960199004975126,
+      "label_acc_on_matches": 0.4444444444444444
+    },
+    "homer": {
+      "episodes": 25,
+      "n_pred": 187,
+      "n_gold": 470,
+      "n_match": 39,
+      "precision": 0.20855614973262032,
+      "recall": 0.08297872340425531,
+      "f1": 0.11872146118721459,
+      "macro_f1": 0.13085727201332883,
+      "n_sem": 16,
+      "e2e_precision": 0.0855614973262032,
+      "e2e_recall": 0.03404255319148936,
+      "e2e_f1": 0.0487062404870624,
+      "label_acc_on_matches": 0.41025641025641024
+    },
+    "robointer_droid": {
+      "episodes": 50,
+      "n_pred": 132,
+      "n_gold": 150,
+      "n_match": 53,
+      "precision": 0.4015151515151515,
+      "recall": 0.35333333333333333,
+      "f1": 0.375886524822695,
+      "macro_f1": 0.3834076479076479,
+      "n_sem": 22,
+      "e2e_precision": 0.16666666666666666,
+      "e2e_recall": 0.14666666666666667,
+      "e2e_f1": 0.15602836879432622,
+      "label_acc_on_matches": 0.41509433962264153
+    }
+  },
+  "subset_avg": {
+    "f1": 0.2245708212072833,
+    "e2e_f1": 0.09477886644371329
+  },
+  "f1_micro_ci95": [
+    0.153,
+    0.2395
+  ],
+  "f1_subset_avg_ci95": [
+    0.1797,
+    0.2795
+  ],
+  "e2e_f1_micro_ci95": [
+    0.0562,
+    0.1088
+  ],
+  "e2e_f1_subset_avg_ci95": [
+    0.0652,
+    0.1331
+  ],
+  "granularity": {
+    "all": {
+      "pred_sec": 10.413,
+      "gold_sec": 5.772,
+      "pred_per_episode": 3.97,
+      "gold_per_episode": 7.43
+    },
+    "galaxea": {
+      "pred_sec": 5.039,
+      "gold_sec": 3.601,
+      "pred_per_episode": 3.12,
+      "gold_per_episode": 4.92
+    },
+    "homer": {
+      "pred_sec": 12.404,
+      "gold_sec": 5.001,
+      "pred_per_episode": 7.48,
+      "gold_per_episode": 18.8
+    },
+    "robointer_droid": {
+      "pred_sec": 10.767,
+      "gold_sec": 9.968,
+      "pred_per_episode": 2.64,
+      "gold_per_episode": 3.0
+    }
+  },
+  "gold_gaps": {
+    "all": {
+      "n_gaps": 3,
+      "gap_share": 0.0,
+      "gap_free_ceiling_f1": 1.0
+    },
+    "galaxea": {
+      "n_gaps": 0,
+      "gap_share": 0.0,
+      "gap_free_ceiling_f1": 1.0
+    },
+    "homer": {
+      "n_gaps": 0,
+      "gap_share": 0.0,
+      "gap_free_ceiling_f1": 1.0
+    },
+    "robointer_droid": {
+      "n_gaps": 3,
+      "gap_share": 0.0001,
+      "gap_free_ceiling_f1": 1.0
+    }
+  },
+  "cost": {
+    "video_hours": 1.2381,
+    "wall_sec": 187.4,
+    "gpus": 1.0,
+    "gpu_hours_per_video_hour": 0.042,
+    "tokens_in_per_video_hour": 404527,
+    "tokens_out_per_video_hour": 15383,
+    "calls_per_video_hour": 85.6
+  },
+  "missing_pred": 0,
+  "failed_pred": 1,
+  "unjudged_pairs": 0,
+  "judge_model": "Qwen/Qwen3.8-27B",
+  "per_episode": [
+    {
+      "n_pred": 7,
+      "n_gold": 17,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_002",
+      "subset": "galaxea",
+      "task": "rearrange the word baai as brain.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 8,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_007",
+      "subset": "galaxea",
+      "task": "place the food in the right basket with the right gripper, and place the non food items in the left basket with the left gripper.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 5,
+      "n_gold": 14,
+      "n_match": 1,
+      "precision": 0.2,
+      "recall": 0.07142857142857142,
+      "f1": 0.10526315789473682,
+      "pairs": [
+        {
+          "pred_i": 3,
+          "gold_j": 7,
+          "iou": 0.8993,
+          "pred_label": "place the blue cloth in the left basket",
+          "gold_label": "place the wooden spoon into the left basket",
+          "id": "galaxea_009|p003|g007",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "galaxea_009",
+      "subset": "galaxea",
+      "task": "on the green table,place the food in the right basket with the right gripper, and place the non food items in the left basket with the left gripper.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 12,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_011",
+      "subset": "galaxea",
+      "task": "place the food in the right basket with the right gripper, and place the non food items in the left basket with the left gripper.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 6,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_013",
+      "subset": "galaxea",
+      "task": "place the food in the right basket with the right gripper, and place the non food items in the left basket with the left gripper.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 6,
+      "n_match": 2,
+      "precision": 0.5,
+      "recall": 0.3333333333333333,
+      "f1": 0.4,
+      "pairs": [
+        {
+          "pred_i": 1,
+          "gold_j": 2,
+          "iou": 0.8853,
+          "pred_label": "pour the yellow pigment into the container",
+          "gold_label": "place the test tube inside the red cup",
+          "id": "galaxea_028|p001|g002",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 3,
+          "gold_j": 5,
+          "iou": 0.8435,
+          "pred_label": "pour the red pigment into the container",
+          "gold_label": "place the test tube inside the red cup",
+          "id": "galaxea_028|p003|g005",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "galaxea_028",
+      "subset": "galaxea",
+      "task": "pick up the test tube with red pigment and the test tube with blue pigment by grippers and pour them into the container.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 6,
+      "n_match": 1,
+      "precision": 0.25,
+      "recall": 0.16666666666666666,
+      "f1": 0.2,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.7505,
+          "pred_label": "pick up the test tube with red pigment",
+          "gold_label": "pick up the test tube with red pigment",
+          "id": "galaxea_033|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "galaxea_033",
+      "subset": "galaxea",
+      "task": "pick up the test tube with red pigment and the test tube with blue pigment by grippers and pour them into the container.",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 7,
+      "n_gold": 6,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_037",
+      "subset": "galaxea",
+      "task": "pick up the test tube with yellow pigment and the test tube with red pigment by grippers and pour them into the beaker.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 6,
+      "n_gold": 6,
+      "n_match": 5,
+      "precision": 0.8333333333333334,
+      "recall": 0.8333333333333334,
+      "f1": 0.8333333333333334,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8806,
+          "pred_label": "pick up the test tube with yellow pigment",
+          "gold_label": "pick up the test tube with red pigment",
+          "id": "galaxea_039|p000|g000",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 1,
+          "iou": 0.7906,
+          "pred_label": "pour the yellow pigment into the beaker",
+          "gold_label": "pour the red pigment from the test tube into the clear beaker",
+          "id": "galaxea_039|p001|g001",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 3,
+          "gold_j": 3,
+          "iou": 0.794,
+          "pred_label": "pick up the test tube with red pigment",
+          "gold_label": "pick up the test tube with yellow pigment",
+          "id": "galaxea_039|p003|g003",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 4,
+          "gold_j": 4,
+          "iou": 0.9411,
+          "pred_label": "pour the red pigment into the beaker",
+          "gold_label": "pour the yellow pigment from the test tube into the clear beaker",
+          "id": "galaxea_039|p004|g004",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 5,
+          "gold_j": 5,
+          "iou": 0.9652,
+          "pred_label": "place the test tube with red pigment on the table",
+          "gold_label": "put the test tube into the pink bowl",
+          "id": "galaxea_039|p005|g005",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "galaxea_039",
+      "subset": "galaxea",
+      "task": "pick up the test tube with yellow pigment and the test tube with red pigment by grippers and pour them into the beaker.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 8,
+      "n_gold": 6,
+      "n_match": 1,
+      "precision": 0.125,
+      "recall": 0.16666666666666666,
+      "f1": 0.14285714285714288,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9171,
+          "pred_label": "pick up the test tube with blue pigment",
+          "gold_label": "pick up the test tube with red pigment",
+          "id": "galaxea_041|p000|g000",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "galaxea_041",
+      "subset": "galaxea",
+      "task": "pick up the test tube with yellow pigment and the test tube with red pigment by grippers and pour them into the beaker.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_043",
+      "subset": "galaxea",
+      "task": "use the left gripper to place the mouse on the left side of the table onto the mouse pad on the right side.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 3,
+      "n_match": 2,
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1": 0.6666666666666666,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8375,
+          "pred_label": "pick up the cup",
+          "gold_label": "pick up the glass with liquid",
+          "id": "galaxea_045|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 2,
+          "gold_j": 2,
+          "iou": 0.8124,
+          "pred_label": "place the cup on the table",
+          "gold_label": "place the clear cup on the table to the right of the pink bowl",
+          "id": "galaxea_045|p002|g002",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "galaxea_045",
+      "subset": "galaxea",
+      "task": "use a gripper to pick up the cup and pour the liquid into a bowl or tray.",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 3,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.7651,
+          "pred_label": "pick up the cup",
+          "gold_label": "pick up the glass cup containing white powder",
+          "id": "galaxea_047|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "galaxea_047",
+      "subset": "galaxea",
+      "task": "use a gripper to pick up the cup and pour the powder into a bowl or tray.",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 3,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "pairs": [
+        {
+          "pred_i": 2,
+          "gold_j": 2,
+          "iou": 0.8138,
+          "pred_label": "place the cup back on the table",
+          "gold_label": "place the clear cup on the table right next to the pink bowl",
+          "id": "galaxea_049|p002|g002",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "galaxea_049",
+      "subset": "galaxea",
+      "task": "use a gripper to pick up the cup and pour the solid into a bowl or tray.",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 3,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8844,
+          "pred_label": "pick up the cup",
+          "gold_label": "pick up the glass with beans",
+          "id": "galaxea_050|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "galaxea_050",
+      "subset": "galaxea",
+      "task": "use a gripper to pick up the cup and pour the solid into a bowl or tray.",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 4,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_052",
+      "subset": "galaxea",
+      "task": "use the gripper to pour the water into the other two cups on black table.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_058",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the brown bowl.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_060",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the brown plate.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_062",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the dish.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_065",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the gray plate.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_067",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the pink bowl.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_069",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the white box.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "galaxea_071",
+      "subset": "galaxea",
+      "task": "use a gripper to pick the target object and place on the yellow basket.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 1,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9466,
+          "pred_label": "open the drawer",
+          "gold_label": "pull the white handle to open the red drawer",
+          "id": "galaxea_073|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "galaxea_073",
+      "subset": "galaxea",
+      "task": "use the gripper to open the drawer and close the red drawer.",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8588,
+          "pred_label": "open the drawer",
+          "gold_label": "grasp the white handle and pull open the yellow drawer",
+          "id": "galaxea_075|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 1,
+          "iou": 0.8633,
+          "pred_label": "close the drawer",
+          "gold_label": "push the yellow drawer closed",
+          "id": "galaxea_075|p001|g001",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "galaxea_075",
+      "subset": "galaxea",
+      "task": "use the gripper to open the drawer and close the yellow drawer.",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 10,
+      "n_gold": 20,
+      "n_match": 4,
+      "precision": 0.4,
+      "recall": 0.2,
+      "f1": 0.26666666666666666,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.7709,
+          "pred_label": "open pitcher lid",
+          "gold_label": "twist open the pitcher lid",
+          "id": "homer_1|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 5,
+          "gold_j": 11,
+          "iou": 0.9355,
+          "pred_label": "pick up pitcher",
+          "gold_label": "pour a bit of water from the pitcher into the tall glass",
+          "id": "homer_1|p005|g011",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 6,
+          "gold_j": 13,
+          "iou": 0.9403,
+          "pred_label": "pour water into tall glass",
+          "gold_label": "pour water from the pitcher into the tall glass until it's almost full",
+          "id": "homer_1|p006|g013",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 9,
+          "gold_j": 19,
+          "iou": 0.9847,
+          "pred_label": "adjust pitcher position",
+          "gold_label": "place the pitcher on the center part of the table between the two glasses",
+          "id": "homer_1|p009|g019",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_1",
+      "subset": "homer",
+      "task": "use pitcher to pour water into tall glass and wine glass",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 10,
+      "n_match": 2,
+      "precision": 0.6666666666666666,
+      "recall": 0.2,
+      "f1": 0.30769230769230765,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 1,
+          "iou": 0.8352,
+          "pred_label": "wipe the countertop near the coffee machine",
+          "gold_label": "wipe the wooden countertop with a yellow cloth",
+          "id": "homer_10|p000|g001",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 2,
+          "gold_j": 9,
+          "iou": 0.9089,
+          "pred_label": "wipe the stovetop",
+          "gold_label": "wipe the black glass stovetop with a yellow cloth",
+          "id": "homer_10|p002|g009",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "homer_10",
+      "subset": "homer",
+      "task": "clean the countertop and stovetop with a cloth",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 9,
+      "n_gold": 41,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_11",
+      "subset": "homer",
+      "task": "open, inspect and close all containers, bottles and jars in front of you",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 24,
+      "n_gold": 58,
+      "n_match": 5,
+      "precision": 0.20833333333333334,
+      "recall": 0.08620689655172414,
+      "f1": 0.12195121951219515,
+      "pairs": [
+        {
+          "pred_i": 3,
+          "gold_j": 8,
+          "iou": 0.7828,
+          "pred_label": "close red jar",
+          "gold_label": "place the red lid onto the coffee jar to close it",
+          "id": "homer_12|p003|g008",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 13,
+          "gold_j": 32,
+          "iou": 0.7508,
+          "pred_label": "close pink container",
+          "gold_label": "screw the pink lid onto the plastic bottle",
+          "id": "homer_12|p013|g032",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 14,
+          "gold_j": 35,
+          "iou": 0.9198,
+          "pred_label": "open green bottle",
+          "gold_label": "unscrew and remove the green cap from the green bottle",
+          "id": "homer_12|p014|g035",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 15,
+          "gold_j": 36,
+          "iou": 0.8519,
+          "pred_label": "close green bottle",
+          "gold_label": "screw the green cap onto the green bottle",
+          "id": "homer_12|p015|g036",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 19,
+          "gold_j": 47,
+          "iou": 0.7673,
+          "pred_label": "close blue rectangular container",
+          "gold_label": "unscrew and remove the pink cap from the small bottle",
+          "id": "homer_12|p019|g047",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_12",
+      "subset": "homer",
+      "task": "open, inspect and close all containers, bottles and jars in front of you",
+      "has_pred": true,
+      "n_sem": 3,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 26,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_15",
+      "subset": "homer",
+      "task": "fold the laundry items neatly",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 11,
+      "n_gold": 30,
+      "n_match": 2,
+      "precision": 0.18181818181818182,
+      "recall": 0.06666666666666667,
+      "f1": 0.0975609756097561,
+      "pairs": [
+        {
+          "pred_i": 4,
+          "gold_j": 8,
+          "iou": 0.8857,
+          "pred_label": "wash a glass jar",
+          "gold_label": "wash the glass mug with a sponge under running water",
+          "id": "homer_2|p004|g008",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 6,
+          "gold_j": 16,
+          "iou": 0.7514,
+          "pred_label": "wash a glass bowl",
+          "gold_label": "scrub and rinse a clear glass under running water in the sink",
+          "id": "homer_2|p006|g016",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_2",
+      "subset": "homer",
+      "task": "wash the dishes in the sink",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 7,
+      "n_gold": 13,
+      "n_match": 3,
+      "precision": 0.42857142857142855,
+      "recall": 0.23076923076923078,
+      "f1": 0.3,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.903,
+          "pred_label": "pick up the knife",
+          "gold_label": "pick up the onion and the knife",
+          "id": "homer_29|p000|g000",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 4,
+          "gold_j": 9,
+          "iou": 0.925,
+          "pred_label": "dice the onion on the cutting board",
+          "gold_label": "dice the red onion on the cutting board",
+          "id": "homer_29|p004|g009",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 6,
+          "gold_j": 12,
+          "iou": 0.8273,
+          "pred_label": "place the cutting board back on the counter",
+          "gold_label": "place the white cutting board with the knife on the counter next to the sink",
+          "id": "homer_29|p006|g012",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "homer_29",
+      "subset": "homer",
+      "task": "dice an onion",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 9,
+      "n_match": 2,
+      "precision": 0.6666666666666666,
+      "recall": 0.2222222222222222,
+      "f1": 0.3333333333333333,
+      "pairs": [
+        {
+          "pred_i": 1,
+          "gold_j": 4,
+          "iou": 0.7646,
+          "pred_label": "pouring liquid from a white cup into the pan",
+          "gold_label": "pour water from the blue-white cup into the pan",
+          "id": "homer_3|p001|g004",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 2,
+          "gold_j": 7,
+          "iou": 0.9638,
+          "pred_label": "stirring the mixture in the pan with a white spoon",
+          "gold_label": "stir the brown liquid in the pan using a white spatula",
+          "id": "homer_3|p002|g007",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_3",
+      "subset": "homer",
+      "task": "use a spoon to stir contents in a bowl",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 8,
+      "n_match": 1,
+      "precision": 0.25,
+      "recall": 0.125,
+      "f1": 0.16666666666666666,
+      "pairs": [
+        {
+          "pred_i": 1,
+          "gold_j": 4,
+          "iou": 0.785,
+          "pred_label": "peel the outer skin of the onion",
+          "gold_label": "peel the red onion with a knife",
+          "id": "homer_33|p001|g004",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "homer_33",
+      "subset": "homer",
+      "task": "dice an onion with a nice",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 6,
+      "n_match": 1,
+      "precision": 0.25,
+      "recall": 0.16666666666666666,
+      "f1": 0.2,
+      "pairs": [
+        {
+          "pred_i": 3,
+          "gold_j": 5,
+          "iou": 0.7725,
+          "pred_label": "transfer diced tomato to a bowl",
+          "gold_label": "place the tomato in your hand to the bowl with others",
+          "id": "homer_37|p003|g005",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "homer_37",
+      "subset": "homer",
+      "task": "chop the left tomato into dices on the cutting board",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 19,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_38",
+      "subset": "homer",
+      "task": "set a table",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 17,
+      "n_gold": 36,
+      "n_match": 2,
+      "precision": 0.11764705882352941,
+      "recall": 0.05555555555555555,
+      "f1": 0.07547169811320754,
+      "pairs": [
+        {
+          "pred_i": 5,
+          "gold_j": 15,
+          "iou": 0.8828,
+          "pred_label": "wiping the countertop near the sink",
+          "gold_label": "pick up the metal container next to washer rack",
+          "id": "homer_39|p005|g015",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 11,
+          "gold_j": 27,
+          "iou": 0.8105,
+          "pred_label": "wiping the countertop",
+          "gold_label": "move rolling board to the left",
+          "id": "homer_39|p011|g027",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_39",
+      "subset": "homer",
+      "task": "Spray and wipe countertop, clean stovetop, wipe dining table",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 10,
+      "n_gold": 15,
+      "n_match": 4,
+      "precision": 0.4,
+      "recall": 0.26666666666666666,
+      "f1": 0.32,
+      "pairs": [
+        {
+          "pred_i": 2,
+          "gold_j": 3,
+          "iou": 0.9242,
+          "pred_label": "Wipe the inside of the top drawer",
+          "gold_label": "wipe the inside of the nightstand drawer with a cloth",
+          "id": "homer_4|p002|g003",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 4,
+          "gold_j": 5,
+          "iou": 0.8663,
+          "pred_label": "Wipe the top surface of the cabinet again",
+          "gold_label": "wipe the top surface of the wooden nightstand with a white cloth",
+          "id": "homer_4|p004|g005",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 5,
+          "gold_j": 6,
+          "iou": 0.7631,
+          "pred_label": "Adjust and unfold the cleaning cloth",
+          "gold_label": "fold the cloth",
+          "id": "homer_4|p005|g006",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 7,
+          "gold_j": 9,
+          "iou": 0.8325,
+          "pred_label": "Open the bottom drawer",
+          "gold_label": "wipe the drawer handle of the wooden nightstand with a white cloth",
+          "id": "homer_4|p007|g009",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_4",
+      "subset": "homer",
+      "task": "Clean tables, desks, or shelves with a cloth",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 13,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_40",
+      "subset": "homer",
+      "task": "Spray and wipe countertop, clean stovetop, wipe dining table",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 7,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_41",
+      "subset": "homer",
+      "task": "",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 5,
+      "n_gold": 27,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_48",
+      "subset": "homer",
+      "task": "",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 9,
+      "n_gold": 10,
+      "n_match": 5,
+      "precision": 0.5555555555555556,
+      "recall": 0.5,
+      "f1": 0.5263157894736842,
+      "pairs": [
+        {
+          "pred_i": 4,
+          "gold_j": 5,
+          "iou": 0.8069,
+          "pred_label": "dust the middle shelf",
+          "gold_label": "wipe the the top of white shelf with a purple cloth",
+          "id": "homer_5|p004|g005",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 5,
+          "gold_j": 6,
+          "iou": 0.7743,
+          "pred_label": "dust the bottom shelf",
+          "gold_label": "wipe the middle shelf of the white cabinet with a purple cloth",
+          "id": "homer_5|p005|g006",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 6,
+          "gold_j": 7,
+          "iou": 0.9481,
+          "pred_label": "dust the middle shelf",
+          "gold_label": "wipe the white shelf surface around the decorative items with a purple cloth",
+          "id": "homer_5|p006|g007",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 7,
+          "gold_j": 8,
+          "iou": 0.949,
+          "pred_label": "dust the bottom shelf",
+          "gold_label": "wipe the middle shelf of the white cabinet with a purple cloth",
+          "id": "homer_5|p007|g008",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 8,
+          "gold_j": 9,
+          "iou": 0.9938,
+          "pred_label": "dust the middle shelf",
+          "gold_label": "wipe the white shelf surface with a purple cloth",
+          "id": "homer_5|p008|g009",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "homer_5",
+      "subset": "homer",
+      "task": "use a cloth to dust white shelf",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 8,
+      "n_gold": 27,
+      "n_match": 4,
+      "precision": 0.5,
+      "recall": 0.14814814814814814,
+      "f1": 0.22857142857142856,
+      "pairs": [
+        {
+          "pred_i": 1,
+          "gold_j": 5,
+          "iou": 0.8619,
+          "pred_label": "tightening the front wheel with a screwdriver",
+          "gold_label": "use a green screwdriver to tighten the screw on the toy excavator's wheel",
+          "id": "homer_50|p001|g005",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 3,
+          "gold_j": 12,
+          "iou": 0.8255,
+          "pred_label": "tightening the rear wheel with a screwdriver",
+          "gold_label": "use a green screwdriver to tighten the screw on the toy excavator's wheel",
+          "id": "homer_50|p003|g012",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 5,
+          "gold_j": 19,
+          "iou": 0.8715,
+          "pred_label": "tightening the second rear wheel with a screwdriver",
+          "gold_label": "use a green screwdriver to tighten the screw on the toy excavator's wheel",
+          "id": "homer_50|p005|g019",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 7,
+          "gold_j": 26,
+          "iou": 0.9344,
+          "pred_label": "tightening the second front wheel with a screwdriver",
+          "gold_label": "tighten the screw on the wheel of the yellow toy excavator using a green screwdriver",
+          "id": "homer_50|p007|g026",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_50",
+      "subset": "homer",
+      "task": "",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 6,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_52",
+      "subset": "homer",
+      "task": "",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 12,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_53",
+      "subset": "homer",
+      "task": "",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 6,
+      "n_gold": 9,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_56",
+      "subset": "homer",
+      "task": "",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 18,
+      "n_gold": 20,
+      "n_match": 1,
+      "precision": 0.05555555555555555,
+      "recall": 0.05,
+      "f1": 0.052631578947368425,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 1,
+          "iou": 0.756,
+          "pred_label": "pick up a book from the table",
+          "gold_label": "place them three books on to the empty shelf",
+          "id": "homer_59|p000|g001",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_59",
+      "subset": "homer",
+      "task": "Record yourself picking a single item from a home shelf, bookcase, or closet. Show the full reach-and-grab motion with your hands visible.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 7,
+      "n_gold": 18,
+      "n_match": 1,
+      "precision": 0.14285714285714285,
+      "recall": 0.05555555555555555,
+      "f1": 0.08,
+      "pairs": [
+        {
+          "pred_i": 4,
+          "gold_j": 9,
+          "iou": 0.7902,
+          "pred_label": "place white book on shelf",
+          "gold_label": "place five books onto the middle shelf of the white cabinet",
+          "id": "homer_60|p004|g009",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_60",
+      "subset": "homer",
+      "task": "Record yourself placing items back onto shelves. Show the full approach, positioning, and placement motion with hands visible.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 7,
+      "n_gold": 10,
+      "n_match": 1,
+      "precision": 0.14285714285714285,
+      "recall": 0.1,
+      "f1": 0.11764705882352941,
+      "pairs": [
+        {
+          "pred_i": 4,
+          "gold_j": 5,
+          "iou": 0.7829,
+          "pred_label": "draw a palm tree on the beach",
+          "gold_label": "draw a palm tree in the middle of hills with a pen",
+          "id": "homer_7|p004|g005",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_7",
+      "subset": "homer",
+      "task": "draw simple beach and ocean scene using a pencil",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 6,
+      "n_gold": 20,
+      "n_match": 1,
+      "precision": 0.16666666666666666,
+      "recall": 0.05,
+      "f1": 0.07692307692307691,
+      "pairs": [
+        {
+          "pred_i": 1,
+          "gold_j": 4,
+          "iou": 0.7732,
+          "pred_label": "wash the first glass",
+          "gold_label": "wash the inside of clear glass using a green dishcloth under",
+          "id": "homer_9|p001|g004",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_9",
+      "subset": "homer",
+      "task": "wash the two glasses in the sink",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000001",
+      "subset": "robointer_droid",
+      "task": "Move the bowl to the right",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000002",
+      "subset": "robointer_droid",
+      "task": "Take the black lid from the top of the can and put it on the table",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000003",
+      "subset": "robointer_droid",
+      "task": "Move the bowl to the right",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000004",
+      "subset": "robointer_droid",
+      "task": "Take the black lid from the top of the can and put it on the table",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9187,
+          "pred_label": "pick the pen from the mug",
+          "gold_label": "pick up the pen from the black-red cup",
+          "id": "robointer_droid_000005|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 1,
+          "iou": 0.8232,
+          "pred_label": "place the pen on the table",
+          "gold_label": "place the pen on the table left next to the cup",
+          "id": "robointer_droid_000005|p001|g001",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000005",
+      "subset": "robointer_droid",
+      "task": "Remove the pen from the mug and put it on the table",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000006",
+      "subset": "robointer_droid",
+      "task": "Remove the pen from the mug and put it on the table",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 1,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8449,
+          "pred_label": "pick the bottle",
+          "gold_label": "pick up the solid glue from the table",
+          "id": "robointer_droid_000007|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000007",
+      "subset": "robointer_droid",
+      "task": "Pick the bottle on the table and put it in the mug",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 0,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000008",
+      "subset": "robointer_droid",
+      "task": "Pick the bottle on the table and put it in the mug",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000009",
+      "subset": "robointer_droid",
+      "task": "Put the cloth on the countertop shield",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 3,
+      "n_match": 2,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1": 0.8,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.7807,
+          "pred_label": "pick up the blue object",
+          "gold_label": "pick up the blue block from the table",
+          "id": "robointer_droid_000010|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 2,
+          "iou": 0.8831,
+          "pred_label": "place the blue object inside the drawer",
+          "gold_label": "push the drawer door to close the drawer",
+          "id": "robointer_droid_000010|p001|g002",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000010",
+      "subset": "robointer_droid",
+      "task": "Put the blue object inside the drawer.",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 1,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.792,
+          "pred_label": "place rubber band around jar",
+          "gold_label": "put the rubber band around the jar",
+          "id": "robointer_droid_000011|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000011",
+      "subset": "robointer_droid",
+      "task": "Put the rubber band around the jar.",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 3,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8662,
+          "pred_label": "pick up the blue object",
+          "gold_label": "pick up the blue block from the table",
+          "id": "robointer_droid_000012|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000012",
+      "subset": "robointer_droid",
+      "task": "Put the blue object inside the drawer.",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000013",
+      "subset": "robointer_droid",
+      "task": "Move the silver cup to the right",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8821,
+          "pred_label": "pick up the cloth",
+          "gold_label": "pick up the cloth from the purple mat on the table",
+          "id": "robointer_droid_000014|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 1,
+          "iou": 0.9045,
+          "pred_label": "move the cloth to the countertop shield",
+          "gold_label": "place the white cloth on top of the plastic barrier",
+          "id": "robointer_droid_000014|p001|g001",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000014",
+      "subset": "robointer_droid",
+      "task": "Put the cloth on the countertop shield",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000015",
+      "subset": "robointer_droid",
+      "task": "Move the silver cup to the right",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 1,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8609,
+          "pred_label": "approach and grasp the rubber band on the jar",
+          "gold_label": "place the rubber band around the lid of the jar",
+          "id": "robointer_droid_000016|p000|g000",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000016",
+      "subset": "robointer_droid",
+      "task": "Put the rubber band around the jar.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000017",
+      "subset": "robointer_droid",
+      "task": "Pick the marker from the pot and put it on the table",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 1,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.7542,
+          "pred_label": "pick the marker from the pot",
+          "gold_label": "pick up the marker from the container",
+          "id": "robointer_droid_000019|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000019",
+      "subset": "robointer_droid",
+      "task": "Pick the marker from the pot and put it on the table",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 2,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "f1": 0.4,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9823,
+          "pred_label": "approach the tomato",
+          "gold_label": "reach for the tomato on the left side of the table",
+          "id": "robointer_droid_000021|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000021",
+      "subset": "robointer_droid",
+      "task": "Put the tomato inside the silver bowl",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8096,
+          "pred_label": "pick the stuffed pineapple",
+          "gold_label": "pick up the soft pineapple from the table",
+          "id": "robointer_droid_000022|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 1,
+          "iou": 0.837,
+          "pred_label": "place the stuffed pineapple beside the oven",
+          "gold_label": "place the soft pineapple beside the oven next to banana",
+          "id": "robointer_droid_000022|p001|g001",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000022",
+      "subset": "robointer_droid",
+      "task": "Pick the stuffed pineapple and put it beside the oven",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 1,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.775,
+          "pred_label": "approach the cup lid",
+          "gold_label": "pick up the lid from the cup on the table",
+          "id": "robointer_droid_000023|p000|g000",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000023",
+      "subset": "robointer_droid",
+      "task": "Move the cup lid to the right",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000024",
+      "subset": "robointer_droid",
+      "task": "Put the tomato inside the silver bowl",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000025",
+      "subset": "robointer_droid",
+      "task": "Move the cup lid to the right",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 2,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "f1": 0.4,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8599,
+          "pred_label": "approach the stuffed pineapple",
+          "gold_label": "pick up the soft pineapple from the table",
+          "id": "robointer_droid_000027|p000|g000",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000027",
+      "subset": "robointer_droid",
+      "task": "Pick the stuffed pineapple and put it beside the oven",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 2,
+      "n_match": 1,
+      "precision": 0.25,
+      "recall": 0.5,
+      "f1": 0.3333333333333333,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9952,
+          "pred_label": "approach the piece of paper",
+          "gold_label": "pick up the piece of paper from the bottom-left edge of the desk",
+          "id": "robointer_droid_000028|p000|g000",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000028",
+      "subset": "robointer_droid",
+      "task": "Pick up the piece of paper from the edge of the table and move it forward.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 1,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9741,
+          "pred_label": "pick up a bottle from the tray",
+          "gold_label": "pick up the bottle from the wooden tray",
+          "id": "robointer_droid_000029|p000|g000",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000029",
+      "subset": "robointer_droid",
+      "task": "Pick up a bottle from the tray and put it on the table",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9752,
+          "pred_label": "pick up the bottle from the tray",
+          "gold_label": "pick up the left-most bottle on the in the wooden tray",
+          "id": "robointer_droid_000030|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 1,
+          "iou": 0.95,
+          "pred_label": "put the bottle on the table",
+          "gold_label": "place the bottle on the table to the bottom right of the tray",
+          "id": "robointer_droid_000030|p001|g001",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000030",
+      "subset": "robointer_droid",
+      "task": "Pick up a bottle from the tray and put it on the table",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9918,
+          "pred_label": "Pick up the pink and silver measuring spoon from the open drawer",
+          "gold_label": "pick up the red measuring spoon from the open drawer",
+          "id": "robointer_droid_000032|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 1,
+          "iou": 0.9818,
+          "pred_label": "Put the measuring spoon on the kitchen counter",
+          "gold_label": "place the red measuring spoon on the kitchen counter left next to the gray measuring spoon",
+          "id": "robointer_droid_000032|p001|g001",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000032",
+      "subset": "robointer_droid",
+      "task": "Pick up the pink and silver measuring spoon from the open drawer and put it on the kitchen counter",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000033",
+      "subset": "robointer_droid",
+      "task": "Pick up the pink and silver measuring spoon from the open drawer and put it on the kitchen counter",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 1,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.7889,
+          "pred_label": "robot remains stationary",
+          "gold_label": "pick up the gray toy from the bowl",
+          "id": "robointer_droid_000034|p000|g000",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000034",
+      "subset": "robointer_droid",
+      "task": "Remove the gray toy from the bowl and put in it in the toy sink",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 1,
+      "n_gold": 2,
+      "n_match": 1,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.7987,
+          "pred_label": "idle",
+          "gold_label": "pick up the gray toy from the bowl",
+          "id": "robointer_droid_000035|p000|g000",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000035",
+      "subset": "robointer_droid",
+      "task": "Remove the gray toy from the bowl and put in it in the toy sink",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 3,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "pairs": [
+        {
+          "pred_i": 2,
+          "gold_j": 2,
+          "iou": 0.8107,
+          "pred_label": "retract from the white lid",
+          "gold_label": "place the cleaning cloth next purple spray",
+          "id": "robointer_droid_000036|p002|g002",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000036",
+      "subset": "robointer_droid",
+      "task": "Clean the white lid",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 3,
+      "n_match": 2,
+      "precision": 0.5,
+      "recall": 0.6666666666666666,
+      "f1": 0.5714285714285715,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8172,
+          "pred_label": "approach the drawer",
+          "gold_label": "pick up the small white drawer from the open cabinet drawer",
+          "id": "robointer_droid_000037|p000|g000",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 3,
+          "gold_j": 2,
+          "iou": 0.9059,
+          "pred_label": "close the drawer",
+          "gold_label": "push the drawer inward to close",
+          "id": "robointer_droid_000037|p003|g002",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000037",
+      "subset": "robointer_droid",
+      "task": "Put the small white drawer in the top drawer and then close the drawer",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 3,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "pairs": [
+        {
+          "pred_i": 2,
+          "gold_j": 2,
+          "iou": 0.7919,
+          "pred_label": "retract from the white lid",
+          "gold_label": "place the cleaning cloth next to the white lid",
+          "id": "robointer_droid_000038|p002|g002",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000038",
+      "subset": "robointer_droid",
+      "task": "Clean the white lid",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 3,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8928,
+          "pred_label": "approach the open drawer",
+          "gold_label": "pick up the small white box from the shelf",
+          "id": "robointer_droid_000039|p000|g000",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000039",
+      "subset": "robointer_droid",
+      "task": "Put the small white drawer in the top drawer and then close the drawer",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 2,
+      "n_match": 2,
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9197,
+          "pred_label": "approach and grasp the glass cup",
+          "gold_label": "pick up the glass cup from the grey plate",
+          "id": "robointer_droid_000042|p000|g000",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 1,
+          "iou": 0.7845,
+          "pred_label": "lift the glass cup from the grey plate",
+          "gold_label": "place the glass cup on the white table to the right of a yellow sponge",
+          "id": "robointer_droid_000042|p001|g001",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000042",
+      "subset": "robointer_droid",
+      "task": "Remove the glass cup from the grey plate.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 2,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000043",
+      "subset": "robointer_droid",
+      "task": "Cover the pot",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 2,
+      "n_match": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.7718,
+          "pred_label": "pick up the pot lid",
+          "gold_label": "grasp the handle of the glass lid on the table",
+          "id": "robointer_droid_000044|p000|g000",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 1,
+          "iou": 0.8545,
+          "pred_label": "place the lid on the pot",
+          "gold_label": "place the glass lid on top of the black pot",
+          "id": "robointer_droid_000044|p001|g001",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000044",
+      "subset": "robointer_droid",
+      "task": "Cover the pot",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 5,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "robointer_droid_000045",
+      "subset": "robointer_droid",
+      "task": "put the desktop items into the drawer and close the drawer",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 5,
+      "n_match": 2,
+      "precision": 0.6666666666666666,
+      "recall": 0.4,
+      "f1": 0.5,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8898,
+          "pred_label": "pick up the black pan from the stovetop",
+          "gold_label": "pick up the grey electronic meter on the table",
+          "id": "robointer_droid_000046|p000|g000",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 2,
+          "gold_j": 4,
+          "iou": 0.8252,
+          "pred_label": "close the drawer",
+          "gold_label": "push to the drawer to close the drawer",
+          "id": "robointer_droid_000046|p002|g004",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000046",
+      "subset": "robointer_droid",
+      "task": "put the desktop items into the drawer and close the drawer",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 8,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.125,
+      "f1": 0.18181818181818182,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.7896,
+          "pred_label": "Pick up the green block and place it in the black bowl",
+          "gold_label": "pick up the blue building block from the top of the cabinet",
+          "id": "robointer_droid_000047|p000|g000",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000047",
+      "subset": "robointer_droid",
+      "task": "Pick up the building block toys from the top of the cabinet and put them in the black bowl.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 6,
+      "n_gold": 8,
+      "n_match": 4,
+      "precision": 0.6666666666666666,
+      "recall": 0.5,
+      "f1": 0.5714285714285715,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.7867,
+          "pred_label": "pick up the blue block",
+          "gold_label": "pick up the blue building block from the top of the cabinet",
+          "id": "robointer_droid_000050|p000|g000",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 2,
+          "iou": 0.8596,
+          "pred_label": "place the blue block in the black bowl",
+          "gold_label": "pick up the green building block from the top of the cabinet",
+          "id": "robointer_droid_000050|p001|g002",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 4,
+          "gold_j": 6,
+          "iou": 0.8421,
+          "pred_label": "pick up the red block",
+          "gold_label": "pick up the yellow building block from the top of the cabinet",
+          "id": "robointer_droid_000050|p004|g006",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 5,
+          "gold_j": 7,
+          "iou": 0.8716,
+          "pred_label": "place the red block in the black bowl",
+          "gold_label": "drop the yellow building block into the black bowl",
+          "id": "robointer_droid_000050|p005|g007",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000050",
+      "subset": "robointer_droid",
+      "task": "Pick up the building block toys from the top of the cabinet and put them in the black bowl.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 5,
+      "n_gold": 4,
+      "n_match": 1,
+      "precision": 0.2,
+      "recall": 0.25,
+      "f1": 0.22222222222222224,
+      "pairs": [
+        {
+          "pred_i": 4,
+          "gold_j": 3,
+          "iou": 0.9795,
+          "pred_label": "move the blue bowl away from the crate",
+          "gold_label": "place the spoon into the blue bowl",
+          "id": "robointer_droid_000055|p004|g003",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000055",
+      "subset": "robointer_droid",
+      "task": "Put half a spoon of the blue bowl's contents into the small crate",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 4,
+      "n_match": 2,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9565,
+          "pred_label": "approach and grasp the spoon",
+          "gold_label": "pick up the spoon from the blue bowl",
+          "id": "robointer_droid_000056|p000|g000",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 3,
+          "gold_j": 3,
+          "iou": 0.925,
+          "pred_label": "move spoon to the small crate and release contents",
+          "gold_label": "place the spoon in the bowl",
+          "id": "robointer_droid_000056|p003|g003",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000056",
+      "subset": "robointer_droid",
+      "task": "Put half a spoon of the blue bowl's contents into the small crate",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 8,
+      "n_match": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.125,
+      "f1": 0.18181818181818182,
+      "pairs": [
+        {
+          "pred_i": 2,
+          "gold_j": 7,
+          "iou": 0.9315,
+          "pred_label": "place the folded cloth into the box",
+          "gold_label": "place the yellow cloth inside the cardboard box",
+          "id": "robointer_droid_000057|p002|g007",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000057",
+      "subset": "robointer_droid",
+      "task": "move the object into the box",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 8,
+      "n_gold": 8,
+      "n_match": 1,
+      "precision": 0.125,
+      "recall": 0.125,
+      "f1": 0.125,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8428,
+          "pred_label": "approach and grasp the object",
+          "gold_label": "pick up the black marker from the table",
+          "id": "robointer_droid_000058|p000|g000",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000058",
+      "subset": "robointer_droid",
+      "task": "move the object into the box",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 6,
+      "n_gold": 3,
+      "n_match": 1,
+      "precision": 0.16666666666666666,
+      "recall": 0.3333333333333333,
+      "f1": 0.2222222222222222,
+      "pairs": [
+        {
+          "pred_i": 5,
+          "gold_j": 2,
+          "iou": 0.9075,
+          "pred_label": "releasing the plug",
+          "gold_label": "push the plug into the power strip on the table",
+          "id": "robointer_droid_000059|p005|g002",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000059",
+      "subset": "robointer_droid",
+      "task": "moving the plug from the table and inserting it into the power strip",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 3,
+      "n_match": 3,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9061,
+          "pred_label": "approach and grasp the plug on the table",
+          "gold_label": "pick up the white plug from the table",
+          "id": "robointer_droid_000060|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 1,
+          "gold_j": 1,
+          "iou": 0.9143,
+          "pred_label": "lift the plug and move it to the power strip",
+          "gold_label": "insert the black plug into the middle of the power strip on the table",
+          "id": "robointer_droid_000060|p001|g001",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 2,
+          "gold_j": 2,
+          "iou": 0.8761,
+          "pred_label": "insert the plug into the power strip",
+          "gold_label": "push the plug into the power strip on the table",
+          "id": "robointer_droid_000060|p002|g002",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "robointer_droid_000060",
+      "subset": "robointer_droid",
+      "task": "moving the plug from the table and inserting it into the power strip",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 10,
+      "n_gold": 6,
+      "n_match": 2,
+      "precision": 0.2,
+      "recall": 0.3333333333333333,
+      "f1": 0.25,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.9888,
+          "pred_label": "approach and grasp the spoon",
+          "gold_label": "pick up the spoon from the green bowl on the left",
+          "id": "robointer_droid_000061|p000|g000",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 9,
+          "gold_j": 5,
+          "iou": 0.9258,
+          "pred_label": "retract arm from the scene",
+          "gold_label": "place the spoon into the white bowl on the right",
+          "id": "robointer_droid_000061|p009|g005",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000061",
+      "subset": "robointer_droid",
+      "task": "Spoon some contents from the white bowl into the green bowl twice",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 6,
+      "n_match": 2,
+      "precision": 0.6666666666666666,
+      "recall": 0.3333333333333333,
+      "f1": 0.4444444444444444,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.8989,
+          "pred_label": "grasp the spoon",
+          "gold_label": "pick up the spoon from the green bowl on the left",
+          "id": "robointer_droid_000062|p000|g000",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 2,
+          "gold_j": 5,
+          "iou": 0.9583,
+          "pred_label": "release the spoon",
+          "gold_label": "place the spoon into the white bowl on the right",
+          "id": "robointer_droid_000062|p002|g005",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "robointer_droid_000062",
+      "subset": "robointer_droid",
+      "task": "Spoon some contents from the white bowl into the green bowl twice",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    }
+  ]
+}

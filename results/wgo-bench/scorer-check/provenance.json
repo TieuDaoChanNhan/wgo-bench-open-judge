@@ -1,0 +1,87 @@
+[
+  {
+    "time_utc": "2026-11-22T22:59:48Z",
+    "note": "check.sbatch",
+    "host": "jpbo-012-32.jupiter.internal",
+    "argv": [
+      "subtask-eval provenance",
+      "record",
+      "--out",
+      "<workdir>/wgo_bench_open_judge/runs/egoant-ref",
+      "--repo",
+      "<workdir>/wgo_bench_open_judge/repo",
+      "--note",
+      "check.sbatch"
+    ],
+    "env": {
+      "SLURM_JOB_ID": "3066617",
+      "SLURM_JOB_NAME": "subtask-eval-check",
+      "SLURM_JOB_NODELIST": "jpbo-012-32",
+      "SLURM_JOB_PARTITION": "booster",
+      "CUDA_VISIBLE_DEVICES": "0,1,2,3     ",
+      "WGO_ROOT": "<workdir>/wgo_bench_eval/data/wgo",
+      "MODELS_DIR": "<workdir>/wgo_bench_eval/models",
+      "RUNS_DIR": "<workdir>/wgo_bench_open_judge/runs",
+      "JUDGE_DIR": "<workdir>/wgo_bench_eval/models/Qwen3.8-27B",
+      "JUDGE_NAME": "Qwen/Qwen3.8-27B",
+      "EGOANT_PRED": "reference_outputs/wgo_homer_v5_1/segmentation",
+      "HF_HUB_OFFLINE": "1"
+    },
+    "code": {
+      "repo": "<workdir>/wgo_bench_open_judge/repo",
+      "commit": "48db938f4f16f62e6c5600969d206ed53f46e817",
+      "branch": "dev",
+      "status": "",
+      "diff": ""
+    },
+    "python": "3.13.5 (main, Nov  3 2026, 21:58:20) [GCC 14.3.0]",
+    "platform": "Linux-5.14.0-687.66.1.el9_8.0.1.aarch64+64k-aarch64-with-glibc2.34",
+    "pip_freeze": [
+      "anyio==4.16.0",
+      "certifi==2026.11.20",
+      "charset-normalizer==3.5.2",
+      "click==8.5.1",
+      "filelock==4.3.0",
+      "fsspec==2026.9.0",
+      "h11==0.16.0",
+      "hf-xet==1.8.0",
+      "httpcore2==2.16.2",
+      "httpx2==2.16.2",
+      "huggingface_hub==2.4.0",
+      "idna==3.20",
+      "iniconfig==2.3.1",
+      "numpy==2.5.5",
+      "opencv-python-headless==5.1.0.95",
+      "packaging==26.3",
+      "pluggy==1.7.0",
+      "pyarrow==26.0.1",
+      "Pygments==2.21.0",
+      "pytest==9.2.0",
+      "PyYAML==6.0.4",
+      "requests==2.34.2",
+      "-e git+https://github.com/TieuDaoChanNhan/wgo-bench-open-judge.git@48db938f4f16f62e6c5600969d206ed53f46e817#egg=subtask_eval",
+      "tqdm==4.70.1",
+      "truststore==0.10.5",
+      "typing_extensions==4.16.0",
+      "urllib3==2.8.0"
+    ],
+    "vllm": null,
+    "gpus": "GPU 0: NVIDIA GH200 120GB (UUID: GPU-3cbddb6f-dbb3-b500-3ff1-8eecec447460)\nGPU 1: NVIDIA GH200 120GB (UUID: GPU-fbf6035e-136d-db55-6fab-4dec71f6867e)\nGPU 2: NVIDIA GH200 120GB (UUID: GPU-c09482e4-8f00-8915-4844-89af638d309f)\nGPU 3: NVIDIA GH200 120GB (UUID: GPU-c4032d06-d293-38c6-e51e-3f23c1932d76)",
+    "models": {},
+    "dataset": {
+      "dataset": "macrodata/WGO-Bench",
+      "revision": "1c86a62e5302",
+      "episodes": {
+        "galaxea": 25,
+        "homer": 25,
+        "robointer_droid": 50
+      },
+      "segments": {
+        "galaxea": 123,
+        "homer": 470,
+        "robointer_droid": 150
+      },
+      "total_segments": 743
+    }
+  }
+]

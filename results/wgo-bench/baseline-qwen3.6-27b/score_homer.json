@@ -1,0 +1,841 @@
+{
+  "run": "<workdir>/wgo_bench_open_judge/runs/cs-qwen36-27b",
+  "subset": "homer",
+  "iou_threshold": 0.75,
+  "outer_snap": true,
+  "micro": {
+    "episodes": 25,
+    "n_pred": 187,
+    "n_gold": 470,
+    "n_match": 39,
+    "precision": 0.20855614973262032,
+    "recall": 0.08297872340425531,
+    "f1": 0.11872146118721459,
+    "macro_f1": 0.13085727201332883,
+    "n_sem": 22,
+    "e2e_precision": 0.11764705882352941,
+    "e2e_recall": 0.04680851063829787,
+    "e2e_f1": 0.06697108066971082,
+    "label_acc_on_matches": 0.5641025641025641
+  },
+  "per_subset": {
+    "homer": {
+      "episodes": 25,
+      "n_pred": 187,
+      "n_gold": 470,
+      "n_match": 39,
+      "precision": 0.20855614973262032,
+      "recall": 0.08297872340425531,
+      "f1": 0.11872146118721459,
+      "macro_f1": 0.13085727201332883,
+      "n_sem": 22,
+      "e2e_precision": 0.11764705882352941,
+      "e2e_recall": 0.04680851063829787,
+      "e2e_f1": 0.06697108066971082,
+      "label_acc_on_matches": 0.5641025641025641
+    }
+  },
+  "subset_avg": {
+    "f1": 0.11872146118721459,
+    "e2e_f1": 0.06697108066971082
+  },
+  "f1_micro_ci95": [
+    0.0753,
+    0.1743
+  ],
+  "f1_subset_avg_ci95": [
+    0.0753,
+    0.1743
+  ],
+  "e2e_f1_micro_ci95": [
+    0.0312,
+    0.1092
+  ],
+  "e2e_f1_subset_avg_ci95": [
+    0.0312,
+    0.1092
+  ],
+  "granularity": {
+    "all": {
+      "pred_sec": 12.404,
+      "gold_sec": 5.001,
+      "pred_per_episode": 7.48,
+      "gold_per_episode": 18.8
+    },
+    "homer": {
+      "pred_sec": 12.404,
+      "gold_sec": 5.001,
+      "pred_per_episode": 7.48,
+      "gold_per_episode": 18.8
+    }
+  },
+  "gold_gaps": {
+    "all": {
+      "n_gaps": 0,
+      "gap_share": 0.0,
+      "gap_free_ceiling_f1": 1.0
+    },
+    "homer": {
+      "n_gaps": 0,
+      "gap_share": 0.0,
+      "gap_free_ceiling_f1": 1.0
+    }
+  },
+  "cost": {
+    "video_hours": 0.6673,
+    "wall_sec": 187.4,
+    "gpus": 1.0,
+    "gpu_hours_per_video_hour": 0.078,
+    "tokens_in_per_video_hour": 373736,
+    "tokens_out_per_video_hour": 13027,
+    "calls_per_video_hour": 37.5
+  },
+  "missing_pred": 0,
+  "failed_pred": 0,
+  "unjudged_pairs": 0,
+  "judge_model": "Qwen/Qwen3-32B-AWQ",
+  "per_episode": [
+    {
+      "n_pred": 10,
+      "n_gold": 20,
+      "n_match": 4,
+      "precision": 0.4,
+      "recall": 0.2,
+      "f1": 0.26666666666666666,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.7709,
+          "pred_label": "open pitcher lid",
+          "gold_label": "twist open the pitcher lid",
+          "id": "homer_1|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 5,
+          "gold_j": 11,
+          "iou": 0.9355,
+          "pred_label": "pick up pitcher",
+          "gold_label": "pour a bit of water from the pitcher into the tall glass",
+          "id": "homer_1|p005|g011",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 6,
+          "gold_j": 13,
+          "iou": 0.9403,
+          "pred_label": "pour water into tall glass",
+          "gold_label": "pour water from the pitcher into the tall glass until it's almost full",
+          "id": "homer_1|p006|g013",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 9,
+          "gold_j": 19,
+          "iou": 0.9847,
+          "pred_label": "adjust pitcher position",
+          "gold_label": "place the pitcher on the center part of the table between the two glasses",
+          "id": "homer_1|p009|g019",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "homer_1",
+      "subset": "homer",
+      "task": "use pitcher to pour water into tall glass and wine glass",
+      "has_pred": true,
+      "n_sem": 3,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 10,
+      "n_match": 2,
+      "precision": 0.6666666666666666,
+      "recall": 0.2,
+      "f1": 0.30769230769230765,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 1,
+          "iou": 0.8352,
+          "pred_label": "wipe the countertop near the coffee machine",
+          "gold_label": "wipe the wooden countertop with a yellow cloth",
+          "id": "homer_10|p000|g001",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 2,
+          "gold_j": 9,
+          "iou": 0.9089,
+          "pred_label": "wipe the stovetop",
+          "gold_label": "wipe the black glass stovetop with a yellow cloth",
+          "id": "homer_10|p002|g009",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "homer_10",
+      "subset": "homer",
+      "task": "clean the countertop and stovetop with a cloth",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 9,
+      "n_gold": 41,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_11",
+      "subset": "homer",
+      "task": "open, inspect and close all containers, bottles and jars in front of you",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 24,
+      "n_gold": 58,
+      "n_match": 5,
+      "precision": 0.20833333333333334,
+      "recall": 0.08620689655172414,
+      "f1": 0.12195121951219515,
+      "pairs": [
+        {
+          "pred_i": 3,
+          "gold_j": 8,
+          "iou": 0.7828,
+          "pred_label": "close red jar",
+          "gold_label": "place the red lid onto the coffee jar to close it",
+          "id": "homer_12|p003|g008",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 13,
+          "gold_j": 32,
+          "iou": 0.7508,
+          "pred_label": "close pink container",
+          "gold_label": "screw the pink lid onto the plastic bottle",
+          "id": "homer_12|p013|g032",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 14,
+          "gold_j": 35,
+          "iou": 0.9198,
+          "pred_label": "open green bottle",
+          "gold_label": "unscrew and remove the green cap from the green bottle",
+          "id": "homer_12|p014|g035",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 15,
+          "gold_j": 36,
+          "iou": 0.8519,
+          "pred_label": "close green bottle",
+          "gold_label": "screw the green cap onto the green bottle",
+          "id": "homer_12|p015|g036",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 19,
+          "gold_j": 47,
+          "iou": 0.7673,
+          "pred_label": "close blue rectangular container",
+          "gold_label": "unscrew and remove the pink cap from the small bottle",
+          "id": "homer_12|p019|g047",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_12",
+      "subset": "homer",
+      "task": "open, inspect and close all containers, bottles and jars in front of you",
+      "has_pred": true,
+      "n_sem": 4,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 26,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_15",
+      "subset": "homer",
+      "task": "fold the laundry items neatly",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 11,
+      "n_gold": 30,
+      "n_match": 2,
+      "precision": 0.18181818181818182,
+      "recall": 0.06666666666666667,
+      "f1": 0.0975609756097561,
+      "pairs": [
+        {
+          "pred_i": 4,
+          "gold_j": 8,
+          "iou": 0.8857,
+          "pred_label": "wash a glass jar",
+          "gold_label": "wash the glass mug with a sponge under running water",
+          "id": "homer_2|p004|g008",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 6,
+          "gold_j": 16,
+          "iou": 0.7514,
+          "pred_label": "wash a glass bowl",
+          "gold_label": "scrub and rinse a clear glass under running water in the sink",
+          "id": "homer_2|p006|g016",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_2",
+      "subset": "homer",
+      "task": "wash the dishes in the sink",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 7,
+      "n_gold": 13,
+      "n_match": 3,
+      "precision": 0.42857142857142855,
+      "recall": 0.23076923076923078,
+      "f1": 0.3,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 0,
+          "iou": 0.903,
+          "pred_label": "pick up the knife",
+          "gold_label": "pick up the onion and the knife",
+          "id": "homer_29|p000|g000",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 4,
+          "gold_j": 9,
+          "iou": 0.925,
+          "pred_label": "dice the onion on the cutting board",
+          "gold_label": "dice the red onion on the cutting board",
+          "id": "homer_29|p004|g009",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 6,
+          "gold_j": 12,
+          "iou": 0.8273,
+          "pred_label": "place the cutting board back on the counter",
+          "gold_label": "place the white cutting board with the knife on the counter next to the sink",
+          "id": "homer_29|p006|g012",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "homer_29",
+      "subset": "homer",
+      "task": "dice an onion",
+      "has_pred": true,
+      "n_sem": 3,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 9,
+      "n_match": 2,
+      "precision": 0.6666666666666666,
+      "recall": 0.2222222222222222,
+      "f1": 0.3333333333333333,
+      "pairs": [
+        {
+          "pred_i": 1,
+          "gold_j": 4,
+          "iou": 0.7646,
+          "pred_label": "pouring liquid from a white cup into the pan",
+          "gold_label": "pour water from the blue-white cup into the pan",
+          "id": "homer_3|p001|g004",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 2,
+          "gold_j": 7,
+          "iou": 0.9638,
+          "pred_label": "stirring the mixture in the pan with a white spoon",
+          "gold_label": "stir the brown liquid in the pan using a white spatula",
+          "id": "homer_3|p002|g007",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "homer_3",
+      "subset": "homer",
+      "task": "use a spoon to stir contents in a bowl",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 8,
+      "n_match": 1,
+      "precision": 0.25,
+      "recall": 0.125,
+      "f1": 0.16666666666666666,
+      "pairs": [
+        {
+          "pred_i": 1,
+          "gold_j": 4,
+          "iou": 0.785,
+          "pred_label": "peel the outer skin of the onion",
+          "gold_label": "peel the red onion with a knife",
+          "id": "homer_33|p001|g004",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "homer_33",
+      "subset": "homer",
+      "task": "dice an onion with a nice",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 6,
+      "n_match": 1,
+      "precision": 0.25,
+      "recall": 0.16666666666666666,
+      "f1": 0.2,
+      "pairs": [
+        {
+          "pred_i": 3,
+          "gold_j": 5,
+          "iou": 0.7725,
+          "pred_label": "transfer diced tomato to a bowl",
+          "gold_label": "place the tomato in your hand to the bowl with others",
+          "id": "homer_37|p003|g005",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "homer_37",
+      "subset": "homer",
+      "task": "chop the left tomato into dices on the cutting board",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 4,
+      "n_gold": 19,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_38",
+      "subset": "homer",
+      "task": "set a table",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 17,
+      "n_gold": 36,
+      "n_match": 2,
+      "precision": 0.11764705882352941,
+      "recall": 0.05555555555555555,
+      "f1": 0.07547169811320754,
+      "pairs": [
+        {
+          "pred_i": 5,
+          "gold_j": 15,
+          "iou": 0.8828,
+          "pred_label": "wiping the countertop near the sink",
+          "gold_label": "pick up the metal container next to washer rack",
+          "id": "homer_39|p005|g015",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 11,
+          "gold_j": 27,
+          "iou": 0.8105,
+          "pred_label": "wiping the countertop",
+          "gold_label": "move rolling board to the left",
+          "id": "homer_39|p011|g027",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_39",
+      "subset": "homer",
+      "task": "Spray and wipe countertop, clean stovetop, wipe dining table",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 10,
+      "n_gold": 15,
+      "n_match": 4,
+      "precision": 0.4,
+      "recall": 0.26666666666666666,
+      "f1": 0.32,
+      "pairs": [
+        {
+          "pred_i": 2,
+          "gold_j": 3,
+          "iou": 0.9242,
+          "pred_label": "Wipe the inside of the top drawer",
+          "gold_label": "wipe the inside of the nightstand drawer with a cloth",
+          "id": "homer_4|p002|g003",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 4,
+          "gold_j": 5,
+          "iou": 0.8663,
+          "pred_label": "Wipe the top surface of the cabinet again",
+          "gold_label": "wipe the top surface of the wooden nightstand with a white cloth",
+          "id": "homer_4|p004|g005",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 5,
+          "gold_j": 6,
+          "iou": 0.7631,
+          "pred_label": "Adjust and unfold the cleaning cloth",
+          "gold_label": "fold the cloth",
+          "id": "homer_4|p005|g006",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 7,
+          "gold_j": 9,
+          "iou": 0.8325,
+          "pred_label": "Open the bottom drawer",
+          "gold_label": "wipe the drawer handle of the wooden nightstand with a white cloth",
+          "id": "homer_4|p007|g009",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_4",
+      "subset": "homer",
+      "task": "Clean tables, desks, or shelves with a cloth",
+      "has_pred": true,
+      "n_sem": 2,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 13,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_40",
+      "subset": "homer",
+      "task": "Spray and wipe countertop, clean stovetop, wipe dining table",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 7,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_41",
+      "subset": "homer",
+      "task": "",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 5,
+      "n_gold": 27,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_48",
+      "subset": "homer",
+      "task": "",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 9,
+      "n_gold": 10,
+      "n_match": 5,
+      "precision": 0.5555555555555556,
+      "recall": 0.5,
+      "f1": 0.5263157894736842,
+      "pairs": [
+        {
+          "pred_i": 4,
+          "gold_j": 5,
+          "iou": 0.8069,
+          "pred_label": "dust the middle shelf",
+          "gold_label": "wipe the the top of white shelf with a purple cloth",
+          "id": "homer_5|p004|g005",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 5,
+          "gold_j": 6,
+          "iou": 0.7743,
+          "pred_label": "dust the bottom shelf",
+          "gold_label": "wipe the middle shelf of the white cabinet with a purple cloth",
+          "id": "homer_5|p005|g006",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 6,
+          "gold_j": 7,
+          "iou": 0.9481,
+          "pred_label": "dust the middle shelf",
+          "gold_label": "wipe the white shelf surface around the decorative items with a purple cloth",
+          "id": "homer_5|p006|g007",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 7,
+          "gold_j": 8,
+          "iou": 0.949,
+          "pred_label": "dust the bottom shelf",
+          "gold_label": "wipe the middle shelf of the white cabinet with a purple cloth",
+          "id": "homer_5|p007|g008",
+          "semantic_match": false
+        },
+        {
+          "pred_i": 8,
+          "gold_j": 9,
+          "iou": 0.9938,
+          "pred_label": "dust the middle shelf",
+          "gold_label": "wipe the white shelf surface with a purple cloth",
+          "id": "homer_5|p008|g009",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "homer_5",
+      "subset": "homer",
+      "task": "use a cloth to dust white shelf",
+      "has_pred": true,
+      "n_sem": 1,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 8,
+      "n_gold": 27,
+      "n_match": 4,
+      "precision": 0.5,
+      "recall": 0.14814814814814814,
+      "f1": 0.22857142857142856,
+      "pairs": [
+        {
+          "pred_i": 1,
+          "gold_j": 5,
+          "iou": 0.8619,
+          "pred_label": "tightening the front wheel with a screwdriver",
+          "gold_label": "use a green screwdriver to tighten the screw on the toy excavator's wheel",
+          "id": "homer_50|p001|g005",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 3,
+          "gold_j": 12,
+          "iou": 0.8255,
+          "pred_label": "tightening the rear wheel with a screwdriver",
+          "gold_label": "use a green screwdriver to tighten the screw on the toy excavator's wheel",
+          "id": "homer_50|p003|g012",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 5,
+          "gold_j": 19,
+          "iou": 0.8715,
+          "pred_label": "tightening the second rear wheel with a screwdriver",
+          "gold_label": "use a green screwdriver to tighten the screw on the toy excavator's wheel",
+          "id": "homer_50|p005|g019",
+          "semantic_match": true
+        },
+        {
+          "pred_i": 7,
+          "gold_j": 26,
+          "iou": 0.9344,
+          "pred_label": "tightening the second front wheel with a screwdriver",
+          "gold_label": "tighten the screw on the wheel of the yellow toy excavator using a green screwdriver",
+          "id": "homer_50|p007|g026",
+          "semantic_match": true
+        }
+      ],
+      "episode_id": "homer_50",
+      "subset": "homer",
+      "task": "",
+      "has_pred": true,
+      "n_sem": 4,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 2,
+      "n_gold": 6,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_52",
+      "subset": "homer",
+      "task": "",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 3,
+      "n_gold": 12,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_53",
+      "subset": "homer",
+      "task": "",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 6,
+      "n_gold": 9,
+      "n_match": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pairs": [],
+      "episode_id": "homer_56",
+      "subset": "homer",
+      "task": "",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 18,
+      "n_gold": 20,
+      "n_match": 1,
+      "precision": 0.05555555555555555,
+      "recall": 0.05,
+      "f1": 0.052631578947368425,
+      "pairs": [
+        {
+          "pred_i": 0,
+          "gold_j": 1,
+          "iou": 0.756,
+          "pred_label": "pick up a book from the table",
+          "gold_label": "place them three books on to the empty shelf",
+          "id": "homer_59|p000|g001",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_59",
+      "subset": "homer",
+      "task": "Record yourself picking a single item from a home shelf, bookcase, or closet. Show the full reach-and-grab motion with your hands visible.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 7,
+      "n_gold": 18,
+      "n_match": 1,
+      "precision": 0.14285714285714285,
+      "recall": 0.05555555555555555,
+      "f1": 0.08,
+      "pairs": [
+        {
+          "pred_i": 4,
+          "gold_j": 9,
+          "iou": 0.7902,
+          "pred_label": "place white book on shelf",
+          "gold_label": "place five books onto the middle shelf of the white cabinet",
+          "id": "homer_60|p004|g009",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_60",
+      "subset": "homer",
+      "task": "Record yourself placing items back onto shelves. Show the full approach, positioning, and placement motion with hands visible.",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 7,
+      "n_gold": 10,
+      "n_match": 1,
+      "precision": 0.14285714285714285,
+      "recall": 0.1,
+      "f1": 0.11764705882352941,
+      "pairs": [
+        {
+          "pred_i": 4,
+          "gold_j": 5,
+          "iou": 0.7829,
+          "pred_label": "draw a palm tree on the beach",
+          "gold_label": "draw a palm tree in the middle of hills with a pen",
+          "id": "homer_7|p004|g005",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_7",
+      "subset": "homer",
+      "task": "draw simple beach and ocean scene using a pencil",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    },
+    {
+      "n_pred": 6,
+      "n_gold": 20,
+      "n_match": 1,
+      "precision": 0.16666666666666666,
+      "recall": 0.05,
+      "f1": 0.07692307692307691,
+      "pairs": [
+        {
+          "pred_i": 1,
+          "gold_j": 4,
+          "iou": 0.7732,
+          "pred_label": "wash the first glass",
+          "gold_label": "wash the inside of clear glass using a green dishcloth under",
+          "id": "homer_9|p001|g004",
+          "semantic_match": false
+        }
+      ],
+      "episode_id": "homer_9",
+      "subset": "homer",
+      "task": "wash the two glasses in the sink",
+      "has_pred": true,
+      "n_sem": 0,
+      "unjudged": 0
+    }
+  ]
+}

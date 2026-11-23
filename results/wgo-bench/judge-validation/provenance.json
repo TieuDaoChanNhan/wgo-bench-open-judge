@@ -1,0 +1,97 @@
+[
+  {
+    "time_utc": "2026-11-23T02:19:50Z",
+    "note": "judges.sbatch",
+    "host": "jpbo-096-27.jupiter.internal",
+    "argv": [
+      "subtask-eval provenance",
+      "record",
+      "--out",
+      "<workdir>/wgo_bench_open_judge/runs/judge-agree",
+      "--repo",
+      "<workdir>/wgo_bench_open_judge/repo",
+      "--note",
+      "judges.sbatch",
+      "--models",
+      "<workdir>/wgo_bench_eval/models/Qwen3-32B-AWQ",
+      "<workdir>/wgo_bench_eval/models/Qwen3.8-27B"
+    ],
+    "env": {
+      "SLURM_JOB_ID": "3066780",
+      "SLURM_JOB_NAME": "subtask-eval-judges",
+      "SLURM_JOB_NODELIST": "jpbo-096-27",
+      "SLURM_JOB_PARTITION": "booster",
+      "CUDA_VISIBLE_DEVICES": "0,1,2,3     ",
+      "WGO_ROOT": "<workdir>/wgo_bench_eval/data/wgo",
+      "MODELS_DIR": "<workdir>/wgo_bench_eval/models",
+      "RUNS_DIR": "<workdir>/wgo_bench_open_judge/runs",
+      "JUDGE_DIR": "<workdir>/wgo_bench_eval/models/Qwen3.8-27B",
+      "JUDGE_NAME": "Qwen/Qwen3.8-27B",
+      "JUDGES": "Qwen3-32B-AWQ:Qwen/Qwen3-32B-AWQ Qwen3.8-27B:Qwen/Qwen3.8-27B",
+      "RUNS": "<workdir>/wgo_bench_open_judge/runs/cs-qwen36-27b",
+      "EGOANT_JSON": "reference_outputs/wgo_homer_v5_1/scores/semantic_e2e_gemini35.json",
+      "TASK_REPO": "<workdir>/wgo_bench_open_judge/repo",
+      "JUDGE_CACHE": "<workdir>/wgo_bench_open_judge/runs/judge_cache.jsonl",
+      "HF_HUB_OFFLINE": "1"
+    },
+    "code": {
+      "repo": "<workdir>/wgo_bench_open_judge/repo",
+      "commit": "48db938f4f16f62e6c5600969d206ed53f46e817",
+      "branch": "dev",
+      "status": "",
+      "diff": ""
+    },
+    "python": "3.13.5 (main, Nov  3 2026, 21:58:20) [GCC 14.3.0]",
+    "platform": "Linux-5.14.0-687.66.1.el9_8.0.1.aarch64+64k-aarch64-with-glibc2.34",
+    "pip_freeze": [
+      "anyio==4.16.0",
+      "certifi==2026.11.20",
+      "charset-normalizer==3.5.2",
+      "click==8.5.1",
+      "filelock==4.3.0",
+      "fsspec==2026.9.0",
+      "h11==0.16.0",
+      "hf-xet==1.8.0",
+      "httpcore2==2.16.2",
+      "httpx2==2.16.2",
+      "huggingface_hub==2.4.0",
+      "idna==3.20",
+      "iniconfig==2.3.1",
+      "numpy==2.5.5",
+      "opencv-python-headless==5.1.0.95",
+      "packaging==26.3",
+      "pluggy==1.7.0",
+      "pyarrow==26.0.1",
+      "Pygments==2.21.0",
+      "pytest==9.2.0",
+      "PyYAML==6.0.4",
+      "requests==2.34.2",
+      "-e git+https://github.com/TieuDaoChanNhan/wgo-bench-open-judge.git@48db938f4f16f62e6c5600969d206ed53f46e817#egg=subtask_eval",
+      "tqdm==4.70.1",
+      "truststore==0.10.5",
+      "typing_extensions==4.16.0",
+      "urllib3==2.8.0"
+    ],
+    "vllm": null,
+    "gpus": "GPU 0: NVIDIA GH200 120GB (UUID: GPU-64ec1d17-8dcd-52a6-4f8f-e4513174abbd)\nGPU 1: NVIDIA GH200 120GB (UUID: GPU-2b57f845-6f6c-1439-0e9b-eb212d8557f3)\nGPU 2: NVIDIA GH200 120GB (UUID: GPU-39a6d0e3-4520-a91e-1f8a-f47d95fa8590)\nGPU 3: NVIDIA GH200 120GB (UUID: GPU-422efa5d-49b4-90ec-3584-4d5635778199)",
+    "models": {
+      "<workdir>/wgo_bench_eval/models/Qwen3-32B-AWQ": "Qwen/Qwen3-32B-AWQ@0499c3ac83fdef8810b907a23894ba91e95eddd8",
+      "<workdir>/wgo_bench_eval/models/Qwen3.8-27B": "Qwen/Qwen3.8-27B@37561816e66b5b9153b1b64c10968c18c1e6f4a0"
+    },
+    "dataset": {
+      "dataset": "macrodata/WGO-Bench",
+      "revision": "1c86a62e5302",
+      "episodes": {
+        "galaxea": 25,
+        "homer": 25,
+        "robointer_droid": 50
+      },
+      "segments": {
+        "galaxea": 123,
+        "homer": 470,
+        "robointer_droid": 150
+      },
+      "total_segments": 743
+    }
+  }
+]

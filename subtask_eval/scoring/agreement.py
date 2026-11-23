@@ -5,8 +5,8 @@
     subtask-eval agree extract-egoant --egoant-json <file> --root data/wgo --out runs/judge-agree
 
     # judge those pairs (writes into the same directory), then compare any two verdict files
-    subtask-eval judge --run runs/judge-agree --model Qwen/Qwen3.8-27B --out runs/judge-agree/judged_qwen38.jsonl
-    subtask-eval agree compare --a runs/judge-agree/pairs.jsonl --b runs/judge-agree/judged_qwen38.jsonl
+    subtask-eval judge --run runs/judge-agree --model Qwen/Qwen3-32B-AWQ --out runs/judge-agree/judged_awq.jsonl
+    subtask-eval agree compare --a runs/judge-agree/pairs.jsonl --b runs/judge-agree/judged_awq.jsonl
 
 A verdict file is JSONL with an "id" and a boolean in "match" (judge output), "reference_match"
 (extracted reference) or "human_match" (manual review). Only ids present in both files are compared.

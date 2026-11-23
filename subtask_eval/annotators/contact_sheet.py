@@ -257,8 +257,12 @@ def annotate_episode(ep: dict[str, Any], root: Path, args: argparse.Namespace) -
                 break
             segs.extend(window)
         if ok:
-            return {**row, "segments": postprocess(segs, duration, args.min_seg_sec), "failed": False,
-                    "sheets_per_call": size, "raw": raws, "errors": errors}
+            segments = postprocess(segs, duration, args.min_seg_sec)
+            out = {**row, "segments": segments, "failed": not segments, "sheets_per_call": size,
+                   "raw": raws, "errors": errors}
+            if not segments:
+                out["error"] = "model returned no segments"
+            return out
     return {**row, "error": "; ".join(errors)[:600]}
 
 
