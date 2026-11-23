@@ -8,6 +8,7 @@
 # CPU only. Unit tests, then the scorer check against EgoANT's released HomER predictions.
 #   EGOANT_PRED=<dir inside $EGOANT_DIR> sbatch slurm/check.sbatch
 set -euo pipefail
+: "${W:?set W to your work directory (it holds env.sh)}"
 source "$W/env.sh"
 cd "$REPO"
 

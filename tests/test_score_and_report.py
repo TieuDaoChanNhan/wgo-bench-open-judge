@@ -51,3 +51,10 @@ def test_cli_end_to_end_without_models(wgo_root, tmp_path, monkeypatch, capsys):
     assert s["micro"]["n_match"] == 2 and s["micro"]["n_sem"] == 1 and s["missing_pred"] == 1
     assert report.main([str(run)]) == 0
     assert "| r1 | test |" in capsys.readouterr().out
+
+    # --out re-scores into another directory and leaves the run directory untouched
+    before = (run / "score_all.json").read_text()
+    other = tmp_path / "rescore"
+    assert cli.main(["score", "--root", str(wgo_root), "--run", str(run), "--draws", "50", "--out", str(other)]) == 0
+    assert (run / "score_all.json").read_text() == before
+    assert json.loads((other / "score_all.json").read_text())["micro"] == s["micro"]

@@ -15,6 +15,7 @@
 # Each JUDGES entry is <dir under $MODELS_DIR>:<served name>; the tag is the dir name.
 # RUNS may be empty (step 2 skipped). TASK_REPO and JUDGE_CACHE override the checkout and cache file.
 set -uo pipefail
+: "${W:?set W to your work directory (it holds env.sh)}"
 source "$W/env.sh"
 REPO="${TASK_REPO:-$REPO}"                       # a separate checkout, to run beside another job
 JUDGE_CACHE="${JUDGE_CACHE:-$RUNS_DIR/judge_cache.jsonl}"

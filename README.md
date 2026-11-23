@@ -121,9 +121,10 @@ We therefore use `Qwen3-32B-AWQ`.
 - **Provenance.** Every job writes `provenance.json`: the git commit and any local diff, installed
   packages, vLLM version, GPUs, model revisions, dataset manifest and config. The committed results
   were produced from a clean checkout.
-- **Re-scoring.** Scoring the committed predictions needs no GPU and gives the committed scores:
+- **Re-scoring.** Scoring the committed predictions and verdicts needs no GPU and gives the
+  committed scores. `--out` writes into another directory, so the committed files stay untouched:
   ```bash
-  subtask-eval score --root data/wgo --run results/wgo-bench/baseline-qwen3.6-27b
+  subtask-eval score --root data/wgo --run results/wgo-bench/baseline-qwen3.6-27b --out runs/rescore
   ```
 
 ## Install
@@ -166,8 +167,21 @@ subtask-eval report runs/*                                                  # 5.
 
 **New candidate:** a new model or prompt is a new file in `configs/`. Nothing is tuned on WGO-Bench.
 
-`slurm/` has example jobs for a Slurm GPU cluster (`check`, `run`, `judges`), and
-`slurm/env.example.sh` lists the paths they expect.
+### On a Slurm cluster
+
+`slurm/` has three example jobs. Each one serves the models it needs with vLLM, runs the stages
+above, and records provenance:
+
+| Job | GPUs | What it runs |
+|---|---|---|
+| `check.sbatch` | none | Unit tests and the scorer check |
+| `run.sbatch` | annotator + 1 | One config end to end |
+| `judges.sbatch` | one per judge | Judge comparison |
+
+```bash
+export W=/path/to/workdir && cp slurm/env.example.sh $W/env.sh   # then edit the paths
+CONFIG=configs/cs-qwen36-27b.json sbatch -p <partition> -A <account> -o $W/logs/%x-%j.log slurm/run.sbatch
+```
 
 ## Layout
 

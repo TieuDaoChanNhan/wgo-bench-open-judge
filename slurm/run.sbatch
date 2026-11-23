@@ -11,6 +11,7 @@
 # JUDGE_DIR / JUDGE_NAME given on the command line override env.sh.
 set -uo pipefail
 _JD="${JUDGE_DIR:-}"; _JN="${JUDGE_NAME:-}"
+: "${W:?set W to your work directory (it holds env.sh)}"
 source "$W/env.sh"
 JUDGE_DIR="${_JD:-$JUDGE_DIR}"; JUDGE_NAME="${_JN:-$JUDGE_NAME}"; export JUDGE_DIR JUDGE_NAME
 cd "$REPO" || exit 1

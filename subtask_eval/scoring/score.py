@@ -130,14 +130,19 @@ def main() -> int:
     ap.add_argument("--iou", type=float, default=IOU_THRESHOLD)
     ap.add_argument("--no-outer-snap", action="store_true")
     ap.add_argument("--draws", type=int, default=2000)
+    ap.add_argument("--out", type=Path, default=None,
+                    help="directory for score and pairs files; default the run directory (use it to re-score "
+                         "committed results without touching them)")
     args = ap.parse_args()
 
     preds = load_predictions(args.run)
     snap = not args.no_outer_snap
+    out_dir = args.out or args.run
+    out_dir.mkdir(parents=True, exist_ok=True)
     if args.write_pairs:
         pairs = judge_pairs(score_rows(load_episodes(args.root), preds, snap=snap, threshold=args.iou))
-        write_jsonl(args.run / "pairs.jsonl", pairs)
-        print(f"SCORE|wrote {len(pairs)} matched pairs to {args.run / 'pairs.jsonl'}")
+        write_jsonl(out_dir / "pairs.jsonl", pairs)
+        print(f"SCORE|wrote {len(pairs)} matched pairs to {out_dir / 'pairs.jsonl'}")
 
     episodes = load_episodes(args.root, args.subset)
     judged_path = args.judged or args.run / "judged.jsonl"
@@ -182,7 +187,7 @@ def main() -> int:
     elif result["unjudged_pairs"]:
         print(f"WARNING: {result['unjudged_pairs']} matched pairs have no verdict and count as no match")
 
-    out = args.run / f"score_{args.subset or 'all'}{'_' + args.tag if args.tag else ''}.json"
+    out = out_dir / f"score_{args.subset or 'all'}{'_' + args.tag if args.tag else ''}.json"
     out.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return 0
 

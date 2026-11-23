@@ -1,7 +1,10 @@
-# Copy to $W/env.sh and adjust. Sourced by every job in slurm/.
-# JUPITER: git is not on compute nodes by default. Load it with the rest of the stack, e.g.
-#   module load Stages/2026 GCC/14.3.0 Python/3.13.5 CUDA/13 git/2.50.1
-# otherwise `provenance record` cannot read the commit and reports an error.
+# Example settings for the jobs in slurm/. Usage:
+#   export W=/path/to/workdir          # holds env.sh, data, models, runs, logs
+#   cp slurm/env.example.sh $W/env.sh  # then adjust the paths below
+#   sbatch -p <partition> -A <account> -o $W/logs/%x-%j.log slurm/<job>.sbatch
+# Load your cluster's modules here as well. git must be on PATH on the compute nodes:
+# `provenance record` reads the commit with it and fails without it. On some clusters it is
+# only on login nodes unless a module is loaded (e.g. `module load git`).
 export REPO="$W/repo"                       # this repository
 export WGO_ROOT="$W/data/wgo"               # output of `subtask-eval prepare`
 export MODELS_DIR="$W/models"               # one directory per model, each with a .done marker

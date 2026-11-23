@@ -12,4 +12,15 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: pip install -e ".[test]"
-      - run: python -m pytest -q && subtask-eval --help
+      - run: python -m pytest -q
+      - run: subtask-eval --help
+  package:
+    # A regular (non-editable) install must contain every subpackage.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install .
+      - run: cd /tmp && python -c "import subtask_eval.data.wgo, subtask_eval.annotators.contact_sheet, subtask_eval.scoring.score, subtask_eval.report, subtask_eval.provenance" && subtask-eval --help
